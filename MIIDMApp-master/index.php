@@ -17,7 +17,7 @@
         <script src = "script/elencoReperti.js"></script>
         <script type="text/javascript" src="./script/jsQr.js"></script>
         <script type="text/javascript"src = "./script/webcam.js"></script>
-        <title>MIIDM App</title>
+        <title>MIIDM Appp</title>
     </head>
     <body>
         <?php include("navbar.html"); ?>
