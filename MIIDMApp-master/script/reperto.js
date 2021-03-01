@@ -16,7 +16,7 @@ function stamparep(rep){
     document.getElementById("rep_sezione_codassoluto").innerHTML = ricavaSezione(rep.sezione).toUpperCase() + " - " + rep.codrelativo;
     document.getElementById("rep_titolo").innerHTML = rep.nome;
     document.getElementById("rep_autore").innerHTML = rep.autori.join(", ");
-    if (rep.didascalia.IT != "undefined")
+    if (rep.didascalia.IT != undefined)
         document.getElementById("rep_descrizione").innerHTML = rep.didascalia.IT;
     document.getElementById("rep_materiali").innerHTML = camelCasizza(rep.materiale.join(", "));
     var div_misure = document.getElementById("rep_dimensioni");
