@@ -18,6 +18,8 @@ function stamparep(rep){
     document.getElementById("rep_autore").innerHTML = rep.autori.join(", ");
     console.log(rep.didascalia.IT);
     document.getElementById("rep_descrizione").innerHTML = rep.didascalia.IT;
+    if (rep.didascalia.IT != undefined)
+        document.getElementById("rep_descrizione").innerHTML = rep.didascalia.IT;
     document.getElementById("rep_materiali").innerHTML = camelCasizza(rep.materiale.join(", "));
     var div_misure = document.getElementById("rep_dimensioni");
     var div_media = document.getElementById("container_immagini");
