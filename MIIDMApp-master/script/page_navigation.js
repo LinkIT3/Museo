@@ -131,7 +131,7 @@ function apriFinestraSegnalazioneBug() {
     document.getElementById("finestraSegnalazioneBug").style.top = "0";
 }
 function chiudiFinestraSegnalazioneBug() {
-    document.getElementById("finestraSegnalazioneBug").style.top = "-100vh";
+    document.getElementById("finestraSegnalazioneBug").style.top = "-200vh";
 }
 
 //Fa apparire la home

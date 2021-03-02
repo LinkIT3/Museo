@@ -105,3 +105,13 @@
     text-align: center;
     transition: 0.3s ease-out;
 }
+
+@media screen and (orientation: landscape) {
+    #bottom-nav_button-qr {
+        display:none;
+    }
+
+    #bottom-nav_button-qr img {
+        display:none;
+    }
+}

@@ -47,6 +47,7 @@ input[type=text], textarea {
   box-sizing: border-box;
   font-size: 3vw;
 }
+
 input[type=text]:focus, textarea:focus, button:focus {
     outline: none;
 }
@@ -100,6 +101,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 }
 
 @media screen and (orientation: landscape) {
+
   #finestraSegnalazioneBug {
     width: 100vw;
     height: 100vh;
@@ -107,20 +109,22 @@ input:focus::placeholder, textarea:focus::placeholder {
     background-color: #f1c40e;
     position: fixed;
     top: -500vh;
-    transition: all 0.5s ease;
+    transition: all 0.7s ease;
     z-index: 200;
   }
   
   #segnalaUnBug_divTitolo {
+    /*margin-top: -25vh;*/
     text-align: center;
-    height: 15vh;
+    height: 8vh;
     width: 100%;
     display: flex;
     justify-content: center;
   }
   
   #segnalaUnBug_titolo {
-    font-size: 10vw;
+    box-align: center;
+    font-size: 4vw;
     color: #34495e;
   }
   
@@ -132,7 +136,7 @@ input:focus::placeholder, textarea:focus::placeholder {
   }
   
   .segnalaUnBug_titoloDivForm {
-    font-size: 5vw;
+    font-size: 4vw; 
     color: #34495e;
     margin-left: 10vw;
   }
@@ -148,6 +152,7 @@ input:focus::placeholder, textarea:focus::placeholder {
     box-sizing: border-box;
     font-size: 3vw;
   }
+
   input[type=text]:focus, textarea:focus, button:focus {
       outline: none;
   }
