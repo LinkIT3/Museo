@@ -66,7 +66,7 @@
       $nmedia = -1;
 
       while($media = mysqli_fetch_array($numeroImmagini)) {
-        if(isset($media["nmedia"])) {
+        if(isset($media["nmedia"]) && $media["nmedia"]>0) {
           $nmedia = $media["nmedia"];
         }
       }
