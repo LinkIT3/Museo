@@ -1,4 +1,4 @@
-/////////////////////////////////////////////////////////////
+//Verifica se un'immagine e presente altrimenti da l'url di un immagine sostitutiva 
 function ceckImg(url){
     var xhr = new XMLHttpRequest();
     xhr.open('HEAD', url, false);
@@ -11,7 +11,6 @@ function ceckImg(url){
         return "res/miniature/immagine_assente.png";
     }
 }
-///////////////////////////////////////////////////////////////
 
 function animaSelezione(sezione) {
     sezione.style.backgroundColor = "#f1c40e";
