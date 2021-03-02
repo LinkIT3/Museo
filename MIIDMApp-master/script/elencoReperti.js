@@ -1,3 +1,18 @@
+/////////////////////////////////////////////////////////////
+function ceckImg(url){
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', url, false);
+    xhr.send();
+
+    if(xhr.status == "200"){
+        return url;
+    }
+    else{
+        return "res/miniature/immagine_assente.png";
+    }
+}
+///////////////////////////////////////////////////////////////
+
 function animaSelezione(sezione) {
     sezione.style.backgroundColor = "#f1c40e";
     cercaRepertiPerSezione(sezione.id);
@@ -40,7 +55,8 @@ function costruisciListaReperti(url, key) {
         });
 }
 
-function stampaReperto(reperto, index) {
+//function stampaReperto(reperto, index) {
+function stampaReperto(reperto) {
     //Crea article principale
     var rep = document.createElement("article");
     rep.classList.add("reperto");
@@ -53,7 +69,7 @@ function stampaReperto(reperto, index) {
     var containerImg = document.createElement("div");
     containerImg.classList.add("imgReperto_container");
     var imgReperto = document.createElement("img");
-    imgReperto.src = "res/miniature/min_" + nomeFoto(reperto.sezione, reperto.codrelativo, 0);
+    imgReperto.src = ceckImg("res/miniature/min_" + nomeFoto(reperto.sezione, reperto.codrelativo, 0));////////////////////////////////////////////////
     containerImg.appendChild(imgReperto);
 
     //Crea titolo reperto

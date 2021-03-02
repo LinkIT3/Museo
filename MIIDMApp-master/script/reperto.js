@@ -28,14 +28,26 @@ function stamparep(rep){
     div_media.innerHTML = "";
 
     //Inserimento immagini
-    const numeroImmagini = parseInt(rep.nmedia);
-    for(var nImmagine = 0; nImmagine < numeroImmagini; nImmagine++) {
-        var img = document.createElement("img");
-        img.src = "../res/miniature/min_" + nomeFoto(rep.sezione, rep.codrelativo, nImmagine);
-        div_media.appendChild(img);
-        img.classList.add("mySlides");
+    if(parseInt(rep.nmedia) != -1){
+        const numeroImmagini = parseInt(rep.nmedia);
+        for(var nImmagine = 0; nImmagine < numeroImmagini; nImmagine++) {
+            var img = document.createElement("img");
+            img.src = "res/miniature/min_" + nomeFoto(rep.sezione, rep.codrelativo, nImmagine);
+            div_media.appendChild(img);
+            img.classList.add("mySlides");
+        }
+        mostraImmagine(0);
     }
-    mostraImmagine(0);
+    else{
+        const numeroImmagini = 1;
+        for(var nImmagine = 0; nImmagine < numeroImmagini; nImmagine++) {
+            var img = document.createElement("img");
+            img.src = "res/miniature/immagine_assente.png";
+            div_media.appendChild(img);
+            img.classList.add("mySlides");
+        }
+        mostraImmagine(0);
+    }
 
     //Ottenimento misure
     Object.keys(rep.misura).forEach(m => {
@@ -46,7 +58,7 @@ function stamparep(rep){
         valoreMisura.innerText = rep.misura[m];
 
         var iconaMisura = document.createElement("img");
-        iconaMisura.src = "../res/iconaMisura_" + m.replace("à", "a") + ".svg";
+        iconaMisura.src = "res/iconaMisura_" + m.replace("à", "a") + ".svg";
 
         var descrizioneMisura = document.createElement("div");
         descrizioneMisura.innerHTML = m;
