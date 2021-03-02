@@ -36,23 +36,49 @@
   <div id = "divOscuramento" onclick="navbar_closeSidenav()"></div>
 
 <script>
-  function navbar_openSidenav() {
-  document.getElementById("navbar_mySidenav").style.left = "0";
-  document.getElementById("navbar_topNav").style.backgroundColor = "rgba(241, 196, 14, 1)";
-  document.getElementById("hamburgerButton").src = "./res/chiudi.svg";
-  document.getElementById("hamburgerButton").onclick = function() {navbar_closeSidenav()};
-  document.getElementById('divOscuramento').style.zIndex = "2";
-  setTimeout(function() {
-      document.getElementById('divOscuramento').style.opacity = "0.7";
-  }, 50);
-}
+  if(window.innerHeight > window.innerWidth)
+  {
+    function navbar_openSidenav() {
+      document.getElementById("navbar_mySidenav").style.left = "0";
+      document.getElementById("navbar_topNav").style.backgroundColor = "rgba(241, 196, 14, 1)";
+      document.getElementById("hamburgerButton").src = "./res/chiudi.svg";
+      document.getElementById("hamburgerButton").onclick = function() {navbar_closeSidenav()};
+      document.getElementById('divOscuramento').style.zIndex = "2";
+      setTimeout(function() {
+          document.getElementById('divOscuramento').style.opacity = "0.7";
+      }, 50);
+    }
 
-function navbar_closeSidenav() {
-  document.getElementById("navbar_mySidenav").style.left = "-65vw";;
-  document.getElementById("hamburgerButton").src = "./res/hamburgerButton.svg";
-  document.getElementById("hamburgerButton").onclick = function() {navbar_openSidenav()};
-  document.getElementById('divOscuramento').style.opacity = "0";
-  document.getElementById('divOscuramento').style.zIndex = "-4";
-  controllaTrasparenzaTopNavbar();
-}
+    function navbar_closeSidenav() {
+      document.getElementById("navbar_mySidenav").style.left = "-65vw";
+      document.getElementById("hamburgerButton").src = "./res/hamburgerButton.svg";
+      document.getElementById("hamburgerButton").onclick = function() {navbar_openSidenav()};
+      document.getElementById('divOscuramento').style.opacity = "0";
+      document.getElementById('divOscuramento').style.zIndex = "-4";
+      controllaTrasparenzaTopNavbar();
+    }
+  }
+  else{
+    function navbar_openSidenav() {
+      document.getElementById("navbar_mySidenav").style.top = "9vh";
+      document.getElementById("navbar_topNav").style.backgroundColor = "rgba(241, 196, 14, 1)";
+      document.getElementById("hamburgerButton").src = "./res/chiudi.svg";
+      document.getElementById("hamburgerButton").onclick = function() {navbar_closeSidenav()};
+      document.getElementById('divOscuramento').style.zIndex = "2";
+      setTimeout(function() {
+          document.getElementById('divOscuramento').style.opacity = "0.7";
+      }, 50);
+    }
+
+    function navbar_closeSidenav() {
+      document.getElementById("navbar_mySidenav").style.top = "-100vh";
+      document.getElementById("hamburgerButton").src = "./res/hamburgerButton.svg";
+      document.getElementById("hamburgerButton").onclick = function() {navbar_openSidenav()};
+      document.getElementById('divOscuramento').style.opacity = "0";
+      document.getElementById('divOscuramento').style.zIndex = "-100";
+      controllaTrasparenzaTopNavbar();
+    }
+
+  }
+  
 </script>

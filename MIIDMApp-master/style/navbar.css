@@ -129,4 +129,58 @@ nav#navbar_topNav {
     align-items: center;
     margin-top: 1vh;
   }
+
+  #navbar_mySidenav {
+    background-color: #f1c40e;
+    transition: all 0.5s ease;
+    width: 100vw;
+    height: 50vh;
+    position: fixed;
+    top: -100vh;
+    left: 0vw;
+    z-index: 101;
+  }
+
+  .navbar_divSelezioniSidenav {
+    display: grid;
+    grid-template-columns: 20vw 45vw;
+    width: 65vw;
+    height: 7vh;
+  }
+  
+  .navbar_divIconeSelezioniSidenav {
+    width: 20vw;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .navbar_iconeSelezioniSidenav {
+    width: 4vh;
+    padding-left: 2vw;
+  }
+  
+  .navbar_divLinkSelezioniSidebar {
+    align-items: center;
+    display: flex;
+    width: 45vw;
+  }
+  
+  .navbar_linkSelezioniSidenav {
+    font-size: 5vw;
+    color: #34495e;
+  }
+  
+  #divOscuramento {
+      position: fixed;
+      z-index: -4;
+      opacity: 0;
+      top: 9vh;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background-color: black;
+      transition: all 0.5s ease;
+  }
 }
