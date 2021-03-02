@@ -30,38 +30,62 @@
       $queryAcqui = "SELECT * FROM `acquisizioni` WHERE codassoluto = $cod";
       $queryMateriali = "SELECT * FROM `compostoda` WHERE codassoluto = $cod";
       $queryMisure = "SELECT * FROM `misure` a, nomimisure b WHERE a.tipomisura = b.tipomisura AND codassoluto = $cod";
+      $queryImmagini = "SELECT nmedia FROM media WHERE codassoluto = $cod";
       $didascalieAssieme = mysqli_query($con, $queryDidascalie);
       $autoriAssieme = mysqli_query($con, $queryAutori);
       $acquiAssieme = mysqli_query($con, $queryAcqui);
       $materialiAssieme = mysqli_query($con, $queryMateriali);
       $misureAssieme = mysqli_query($con, $queryMisure);
+      $numeroImmagini = mysqli_query($con, $queryImmagini);
+      
       while($autoreSingolo = mysqli_fetch_array($autoriAssieme)) {
         array_push($arrayAutori, $autoreSingolo[0]);
       }
+      
       while($didascaliaSingola = mysqli_fetch_array($didascalieAssieme)) {
         $codiceDidascalia = $didascaliaSingola[1];
         $arrayDida[$codiceDidascalia] = $didascaliaSingola[2];
       }
+      
       while($acquiSingola = mysqli_fetch_array($acquiAssieme)) {
         $codacqui = $acquiSingola[1];
         $tipoacqui = $acquiSingola[2];
         $dasogg = $acquiSingola[3];
         $quantita = $acquiSingola[4];
       }
+      
       while($materialeSingolo = mysqli_fetch_array($materialiAssieme)) {
         array_push($arrayMateriali, $materialeSingolo[1]);
       }
+      
       while($misuraSingola = mysqli_fetch_assoc($misureAssieme)) {
         $nomeMisura = $misuraSingola["nomemisura"];
         $arrayMisure[$nomeMisura] = $misuraSingola["valore"];
       }
-      $array = array("codassoluto" => $cod, "nome" => $nome, "sezione" => $sezione, "codrelativo" => $codrel, "annoiniziouso" => $data, "autori" => $arrayAutori, "didascalia" => $arrayDida,  "codacquisizione" => $codacqui, "tipoacquisizione" => $tipoacqui,  "dasoggetto" => $dasogg, "quantita" => $quantita, "materiale" => $arrayMateriali, "misura" => $arrayMisure);
+
+      $nmedia = -1;
+
+      while($media = mysqli_fetch_array($numeroImmagini)) {
+        if(isset($media["nmedia"])) {
+          $nmedia = $media["nmedia"];
+        }
+      }
+      
+      $array = array("codassoluto" => $cod, "nome" => $nome, "sezione" => $sezione, "codrelativo" => $codrel, "annoiniziouso" => $data, "autori" => $arrayAutori, "didascalia" => $arrayDida,  "codacquisizione" => $codacqui, "tipoacquisizione" => $tipoacqui,  "dasoggetto" => $dasogg, "quantita" => $quantita, "materiale" => $arrayMateriali, "misura" => $arrayMisure, "nmedia" => $nmedia);
       $JSONParziale = json_encode($array);
       $JSONCompleto .= $JSONParziale;
+      
       if($i != $numeroReperti) {
         $JSONCompleto .= ",";
       }
     }
+    /*
+    /////////////////////////////////////
+    $fp = fopen('results.json', 'w');
+    fwrite($fp, $JSONCompleto);
+    fclose($fp);
+    ////////////////////////////////////
+    */
     return $JSONCompleto;
   }
 
@@ -91,6 +115,13 @@
 		}
       }
 	  $JSONCompleto .= "]";
+    /*
+    /////////////////////////////////////
+    $fp = fopen('results.json', 'w');
+    fwrite($fp, $JSONCompleto);
+    fclose($fp);
+    ////////////////////////////////////
+    */
       return $JSONCompleto;
     }
 
