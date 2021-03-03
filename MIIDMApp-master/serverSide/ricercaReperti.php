@@ -141,10 +141,10 @@
     if ($parola!="") {
         $query = "SELECT * FROM `repertinuova` WHERE nome LIKE ?";
 	$parola = "%" . $parola . "%";
-	mysqli_prepare($stmt, $query);
-	mysqli_stmt_bind_param($stmt, "s", $parola);
-	mysqli_stmt_execute($stmt);
-	mysqli_stmt_bind_result($stmt, $reperti);
+	$stmt = $con->prepare($query);
+	$stmt->bind_param("s", $parola);
+	$stmt->execute();
+	$reperti = $stmt->get_result();
     }
     if ($sezione!="") {
 		switch($sezione) {
