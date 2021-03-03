@@ -64,9 +64,11 @@
       }
 	    
       $tmp = mysqli_fetch_array($numeroImmagini);
-      $nmedia = $tmp["numero_media"];
 
-      if($nmedia == null) {
+      if(isset($tmp["numero_media"])) {
+        $nmedia = $tmp["numero_media"];
+      }
+      else {
         $nmedia = 0;
       }
 
@@ -90,7 +92,7 @@
 
 	function JSONizzaParziale($con, $reperti) {
       $numeroReperti = mysqli_num_rows($reperti);
-      $JSONCompleto = "[";
+      $JSONCompleto = "";
 	  $i = 0;
       while($reperto = mysqli_fetch_array($reperti)) {
 	    $i++;
@@ -113,7 +115,7 @@
 			$JSONCompleto .= ",";
 		}
       }
-	  $JSONCompleto .= "]";
+	  
     /*
     /////////////////////////////////////
     $fp = fopen('results.json', 'w');
@@ -121,7 +123,7 @@
     fclose($fp);
     ////////////////////////////////////
     */
-      return $JSONCompleto;
+      return "[" . $JSONCompleto . "]";
     }
 
 
@@ -148,6 +150,7 @@
         $stmt->bind_param("s", $parola);
         $stmt->execute();
         $reperti = $stmt->get_result();
+        echo JSONizzaParziale($con, $reperti);
     }
     if ($sezione!="") {
         $query = "SELECT * FROM `repertinuova` WHERE sezione = ?";
@@ -155,8 +158,8 @@
         $stmt->bind_param("s", $sezione);
         $stmt->execute();
         $reperti = $stmt->get_result();
-        echo JSONizzaId($con, $reperti);
+        echo JSONizzaParziale($con, $reperti);
     }
    
-    echo JSONizzaParziale($con, $reperti);
+    
 ?>

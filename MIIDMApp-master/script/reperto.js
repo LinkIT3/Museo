@@ -40,13 +40,13 @@ function stamparep(rep){
     }
     else{
         var divImg = document.getElementById("separe_media");
-        divImg.remove();
+        divImg.style.display = "none";
         var divImg = document.getElementById("rep_media");
-        divImg.remove();
+        divImg.style.display = "none";
         var divImg = document.getElementById("show_immagini");
-        divImg.remove();
+        divImg.style.display = "none";
         var divImg = document.getElementById("container_immagini");
-        divImg.remove();
+        divImg.style.display = "none";
     }
 
     //Ottenimento misure
