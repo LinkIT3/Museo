@@ -133,24 +133,29 @@
     $sezione = isset($_GET["section"])?$_GET["section"]:"";;
     
     if ($id!=""){
-        $query = "SELECT * FROM `repertinuova` WHERE codassoluto = $id";
-        $reperti = mysqli_query($con, $query);
+        $query = "SELECT * FROM `repertinuova` WHERE codassoluto = ?";
+        $stmt = $con->prepare($query);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $reperti = $stmt->get_result();
         echo JSONizzaId($con, $reperti);
         exit();
     }
     if ($parola!="") {
         $query = "SELECT * FROM `repertinuova` WHERE nome LIKE ?";
-	$parola = "%" . $parola . "%";
-	$stmt = $con->prepare($query);
-	$stmt->bind_param("s", $parola);
-	$stmt->execute();
-	$reperti = $stmt->get_result();
+        $parola = "%" . $parola . "%";
+        $stmt = $con->prepare($query);
+        $stmt->bind_param("s", $parola);
+        $stmt->execute();
+        $reperti = $stmt->get_result();
     }
     if ($sezione!="") {
-		switch($sezione) {
-		}
-        $query = "SELECT * FROM `repertinuova` WHERE sezione = '$sezione'";
-	$reperti = mysqli_query($con, $query);
+        $query = "SELECT * FROM `repertinuova` WHERE sezione = ?";
+        $stmt = $con->prepare($query);
+        $stmt->bind_param("s", $sezione);
+        $stmt->execute();
+        $reperti = $stmt->get_result();
+        echo JSONizzaId($con, $reperti);
     }
    
     echo JSONizzaParziale($con, $reperti);
