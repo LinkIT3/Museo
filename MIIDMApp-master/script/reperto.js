@@ -39,14 +39,14 @@ function stamparep(rep){
         mostraImmagine(0);
     }
     else{
-        const numeroImmagini = 1;
-        for(var nImmagine = 0; nImmagine < numeroImmagini; nImmagine++) {
-            var img = document.createElement("img");
-            img.src = "res/miniature/immagine_assente.png";
-            div_media.appendChild(img);
-            img.classList.add("mySlides");
-        }
-        mostraImmagine(0);
+        var divImg = document.getElementById("separe_media");
+        divImg.remove();
+        var divImg = document.getElementById("rep_media");
+        divImg.remove();
+        var divImg = document.getElementById("show_immagini");
+        divImg.remove();
+        var divImg = document.getElementById("container_immagini");
+        divImg.remove();
     }
 
     //Ottenimento misure

@@ -65,6 +65,10 @@
 	    
       $nmedia = mysqli_fetch_array($numeroImmagini);
 
+      if($nmedia == null) {
+        $nmedia = 0;
+      }
+
       $array = array("codassoluto" => $cod, "nome" => $nome, "sezione" => $sezione, "codrelativo" => $codrel, "annoiniziouso" => $data, "autori" => $arrayAutori, "didascalia" => $arrayDida,  "codacquisizione" => $codacqui, "tipoacquisizione" => $tipoacqui,  "dasoggetto" => $dasogg, "quantita" => $quantita, "materiale" => $arrayMateriali, "misura" => $arrayMisure, "nmedia" => $nmedia);
       $JSONParziale = json_encode($array);
       $JSONCompleto .= $JSONParziale;
