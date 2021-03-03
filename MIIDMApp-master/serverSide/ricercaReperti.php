@@ -122,6 +122,7 @@
 
 
     $con = mysqli_connect($DB_SERVER, $DB_USER, $DB_PASSWORD, $DB_NAME) or die("Connessione al server fallita!");
+    $stmt = mysqli_stmt_init($con);
     mysqli_set_charset($con, "utf8");
     $id = isset($_GET["id"])?$_GET["id"]:"";
     $parola = isset($_GET["keyword"])?$_GET["keyword"]:"";;
@@ -134,13 +135,19 @@
         exit();
     }
     if ($parola!="") {
-        $query = "SELECT * FROM `repertinuova` WHERE nome LIKE '%$parola%'";
+        $query = "SELECT * FROM `repertinuova` WHERE nome LIKE ?";
+	$parola = "%" . $parola . "%";
+	mysqli_prepare($stmt, $query);
+	mysqli_stmt_bind_param($stmt, "s", $parola);
+	mysqli_stmt_execute($stmt);
+	mysqli_stmt_bind_result($stmt, $reperti);
     }
     if ($sezione!="") {
 		switch($sezione) {
 		}
         $query = "SELECT * FROM `repertinuova` WHERE sezione = '$sezione'";
+	$reperti = mysqli_query($con, $query);
     }
-    $reperti = mysqli_query($con, $query);
+   
     echo JSONizzaParziale($con, $reperti);
 ?>
