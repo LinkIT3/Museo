@@ -183,13 +183,19 @@ nav#navbar_topNav {
     resize: both;
   }*/
 
-  .navbar_iconeSelezioniSidenav:hover{
+  /*.navbar_iconeSelezioniSidenav:hover{
     width: 6.5vh;
   } 
 
   .navbar_linkSelezioniSidenav:hover {
     font-weight: bold;
     font-size: 3.25vw;
+  }*/
+
+   /*Viene effettuata la modifica per gli elementi contenuti nel divSelezioniSidenav*/
+  .navbar_divSelezioniSidenav:hover > * {
+    transform: scale(1.05);
+    font-weight: bold;
   }
 
   #divOscuramento {
