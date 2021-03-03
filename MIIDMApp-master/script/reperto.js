@@ -55,7 +55,7 @@ function stamparep(rep){
         divMisuraSingola.classList.add("reperto_misura_singola");
 
         var valoreMisura = document.createElement("div");
-        valoreMisura.innerText = rep.misura[m];
+        valoreMisura.innerText = rep.misura[m] + " " + addUnita(m);
 
         var iconaMisura = document.createElement("img");
         iconaMisura.src = "res/iconaMisura_" + m.replace("à", "a") + ".svg";
@@ -71,6 +71,50 @@ function stamparep(rep){
 
     //Visualizza pagina del reperto
     apriPaginaReperto();
+}
+
+//Aggiunge le unità di misura 
+function addUnita(s) {
+    switch(s.replace("à", "a")) {
+        case "Capacita":
+            return "mL";
+        
+        case "Altezza":
+            return "cm";
+
+        case "Lunghezza":
+            return "cm";
+
+        case "Profondita":
+            return "cm";
+        
+        case "Peso":
+            return "g";
+
+        case "Memoria":
+            return "kB";
+
+        case "Resistenza":
+            return "Ohm";
+
+        case "Voltaggio":
+            return "V";
+
+        case "Amperaggio":
+            return "A";
+
+        case "Cavalli":
+            return "Hp";
+
+        case "Frequenza":
+            return "Hz";
+
+        case "Giri al minuto":
+            return "rpm";
+
+        case "Potenza":
+            return "KW";
+    }       
 }
 
 //Trasforma una stringa rendendo solo la prima lettera maiuscola
