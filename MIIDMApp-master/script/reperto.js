@@ -29,6 +29,10 @@ function stamparep(rep){
 
     //Inserimento immagini
     if(parseInt(rep.nmedia) != 0){
+        var divImg = document.getElementById("container_div_img");
+        if(divImg.style.display != "block"){
+            divImg.style.display = "block";
+        }
         const numeroImmagini = parseInt(rep.nmedia);
         for(var nImmagine = 0; nImmagine < numeroImmagini; nImmagine++) {
             var img = document.createElement("img");
@@ -39,14 +43,10 @@ function stamparep(rep){
         mostraImmagine(0);
     }
     else{
-        var divImg = document.getElementById("separe_media");
-        divImg.style.display = "none";
-        var divImg = document.getElementById("rep_media");
-        divImg.style.display = "none";
-        var divImg = document.getElementById("show_immagini");
-        divImg.style.display = "none";
-        var divImg = document.getElementById("container_immagini");
-        divImg.style.display = "none";
+        var divImg = document.getElementById("container_div_img");
+        if(divImg.style.display != "none"){
+            divImg.style.display = "none";
+        }
     }
 
     //Ottenimento misure
