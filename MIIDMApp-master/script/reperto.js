@@ -28,7 +28,7 @@ function stamparep(rep){
     div_media.innerHTML = "";
 
     //Inserimento immagini
-    if(parseInt(rep.nmedia) != -1){
+    if(parseInt(rep.nmedia) != 0){
         const numeroImmagini = parseInt(rep.nmedia);
         for(var nImmagine = 0; nImmagine < numeroImmagini; nImmagine++) {
             var img = document.createElement("img");
