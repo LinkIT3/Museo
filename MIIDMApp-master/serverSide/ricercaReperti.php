@@ -30,7 +30,7 @@
       $queryAcqui = "SELECT * FROM `acquisizioni` WHERE codassoluto = $cod";
       $queryMateriali = "SELECT * FROM `compostoda` WHERE codassoluto = $cod";
       $queryMisure = "SELECT * FROM `misure` a, nomimisure b WHERE a.tipomisura = b.tipomisura AND codassoluto = $cod";
-      $queryImmagini = "SELECT nmedia FROM media WHERE codassoluto = $cod";
+      $queryImmagini = "SELECT COUNT(*) FROM media  GROUP BY codassoluto HAVING codassoluto = $cod";
       $didascalieAssieme = mysqli_query($con, $queryDidascalie);
       $autoriAssieme = mysqli_query($con, $queryAutori);
       $acquiAssieme = mysqli_query($con, $queryAcqui);
@@ -62,15 +62,9 @@
         $nomeMisura = $misuraSingola["nomemisura"];
         $arrayMisure[$nomeMisura] = $misuraSingola["valore"];
       }
+	    
+      $nmedia = mysqli_fetch_array($numeroImmagini);
 
-      $nmedia = -1;
-
-      while($media = mysqli_fetch_array($numeroImmagini)) {
-        if(isset($media["nmedia"]) && $media["nmedia"]>0) {
-          $nmedia = $media["nmedia"];
-        }
-      }
-      
       $array = array("codassoluto" => $cod, "nome" => $nome, "sezione" => $sezione, "codrelativo" => $codrel, "annoiniziouso" => $data, "autori" => $arrayAutori, "didascalia" => $arrayDida,  "codacquisizione" => $codacqui, "tipoacquisizione" => $tipoacqui,  "dasoggetto" => $dasogg, "quantita" => $quantita, "materiale" => $arrayMateriali, "misura" => $arrayMisure, "nmedia" => $nmedia);
       $JSONParziale = json_encode($array);
       $JSONCompleto .= $JSONParziale;
