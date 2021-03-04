@@ -5,3 +5,5 @@
     $DB_NAME = "museo";
     $DB_SERVER = "localhost";
 ?>
+
+#ciao;
