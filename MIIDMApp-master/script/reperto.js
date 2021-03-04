@@ -15,7 +15,10 @@ function stamparep(rep){
     //Inserimento informazioni principali
     document.getElementById("rep_sezione_codassoluto").innerHTML = ricavaSezione(rep.sezione).toUpperCase() + " - " + rep.codrelativo;
     document.getElementById("rep_titolo").innerHTML = rep.nome;
-    document.getElementById("rep_autore").innerHTML = rep.autori.join(", ");
+    if (rep.autori.length == 0)
+        document.getElementById("rep_autore").innerHTML = "Sconosciuto";
+    else
+        document.getElementById("rep_autore").innerHTML = rep.autori.join(", ");
     //console.log(rep.didascalia.IT);
     //document.getElementById("rep_descrizione").innerHTML = rep.didascalia.IT;
     if (rep.didascalia.IT == undefined)
