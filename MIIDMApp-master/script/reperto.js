@@ -40,6 +40,10 @@ function stamparep(rep){
 
     //Inserimento immagini
     if(parseInt(rep.nmedia) != 0){
+        var divImg = document.getElementById("container_div_img");
+        if(divImg.style.display != "block"){
+            divImg.style.display = "block";
+        }
         const numeroImmagini = parseInt(rep.nmedia);
         for(var nImmagine = 0; nImmagine < numeroImmagini; nImmagine++) {
             var img = document.createElement("img");
@@ -50,14 +54,10 @@ function stamparep(rep){
         mostraImmagine(0);
     }
     else{
-        const numeroImmagini = 1;
-        for(var nImmagine = 0; nImmagine < numeroImmagini; nImmagine++) {
-            var img = document.createElement("img");
-            img.src = "res/miniature/immagine_assente.png";
-            div_media.appendChild(img);
-            img.classList.add("mySlides");
+        var divImg = document.getElementById("container_div_img");
+        if(divImg.style.display != "none"){
+            divImg.style.display = "none";
         }
-        mostraImmagine(0);
     }
 
     //Ottenimento misure
