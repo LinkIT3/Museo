@@ -22,16 +22,28 @@ function stamparep(rep){
     {
         document.getElementById("rep_descrizione").innerHTML = '';
         //document.getElementById("rep_descrizione").innerHTML
-        document.getElementById("rep_descrizioneTitle").style.display = 'none';
+        document.getElementById("titDidascalia").style.display = 'none';
         document.getElementById("separaDescr").style.display = 'none';
     }   
     else
     {
-        document.getElementById("rep_descrizioneTitle").style.display = 'block';
+        document.getElementById("titDidascalia").style.display = 'block';
         document.getElementById("separaDescr").style.display = 'block';
         document.getElementById("rep_descrizione").innerHTML = rep.didascalia.IT;
     }
-    document.getElementById("rep_materiali").innerHTML = camelCasizza(rep.materiale.join(", "));
+    if (rep.materiale.length == 0)
+    {
+        document.getElementById("rep_materiali").innerHTML = '';
+        document.getElementById("titMateriali").style.display = 'none';
+        document.getElementById("separaMat").style.display = 'none';
+    }
+    else
+    {
+        document.getElementById("titMateriali").style.display = 'block';
+        document.getElementById("separaMat").style.display = 'block';
+        document.getElementById("rep_materiali").innerHTML = camelCasizza(rep.materiale.join(", "));
+    }
+        
     var div_misure = document.getElementById("rep_dimensioni");
     var div_media = document.getElementById("container_immagini");
 

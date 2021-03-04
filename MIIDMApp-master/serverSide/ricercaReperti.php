@@ -80,13 +80,13 @@
         $JSONCompleto .= ",";
       }
     }
-    /*
+    
     /////////////////////////////////////
     $fp = fopen('results.json', 'w');
     fwrite($fp, $JSONCompleto);
     fclose($fp);
     ////////////////////////////////////
-    */
+    
     return $JSONCompleto;
   }
 
