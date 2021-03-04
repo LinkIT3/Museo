@@ -82,9 +82,9 @@
     }
     
     /////////////////////////////////////
-    /*$fp = fopen('results.json', 'w');
+    $fp = fopen('results.json', 'w');
     fwrite($fp, $JSONCompleto);
-    fclose($fp);*/
+    fclose($fp);
     ////////////////////////////////////
     
     return $JSONCompleto;
