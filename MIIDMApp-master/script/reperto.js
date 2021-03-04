@@ -16,10 +16,21 @@ function stamparep(rep){
     document.getElementById("rep_sezione_codassoluto").innerHTML = ricavaSezione(rep.sezione).toUpperCase() + " - " + rep.codrelativo;
     document.getElementById("rep_titolo").innerHTML = rep.nome;
     document.getElementById("rep_autore").innerHTML = rep.autori.join(", ");
-    console.log(rep.didascalia.IT);
-    document.getElementById("rep_descrizione").innerHTML = rep.didascalia.IT;
-    if (rep.didascalia.IT != undefined)
+    //console.log(rep.didascalia.IT);
+    //document.getElementById("rep_descrizione").innerHTML = rep.didascalia.IT;
+    if (rep.didascalia.IT == undefined)
+    {
+        document.getElementById("rep_descrizione").innerHTML = '';
+        //document.getElementById("rep_descrizione").innerHTML
+        document.getElementById("rep_descrizioneTitle").style.display = 'none';
+        document.getElementById("separaDescr").style.display = 'none';
+    }   
+    else
+    {
+        document.getElementById("rep_descrizioneTitle").style.display = 'block';
+        document.getElementById("separaDescr").style.display = 'block';
         document.getElementById("rep_descrizione").innerHTML = rep.didascalia.IT;
+    }
     document.getElementById("rep_materiali").innerHTML = camelCasizza(rep.materiale.join(", "));
     var div_misure = document.getElementById("rep_dimensioni");
     var div_media = document.getElementById("container_immagini");
@@ -29,10 +40,6 @@ function stamparep(rep){
 
     //Inserimento immagini
     if(parseInt(rep.nmedia) != 0){
-        var divImg = document.getElementById("container_div_img");
-        if(divImg.style.display != "block"){
-            divImg.style.display = "block";
-        }
         const numeroImmagini = parseInt(rep.nmedia);
         for(var nImmagine = 0; nImmagine < numeroImmagini; nImmagine++) {
             var img = document.createElement("img");
@@ -43,10 +50,14 @@ function stamparep(rep){
         mostraImmagine(0);
     }
     else{
-        var divImg = document.getElementById("container_div_img");
-        if(divImg.style.display != "none"){
-            divImg.style.display = "none";
+        const numeroImmagini = 1;
+        for(var nImmagine = 0; nImmagine < numeroImmagini; nImmagine++) {
+            var img = document.createElement("img");
+            img.src = "res/miniature/immagine_assente.png";
+            div_media.appendChild(img);
+            img.classList.add("mySlides");
         }
+        mostraImmagine(0);
     }
 
     //Ottenimento misure
