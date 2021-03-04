@@ -34,6 +34,7 @@ nav#navbar_topNav {
 
 #navbar_logoTopNav {
   width: 9vh;
+  cursor: pointer;
 }
 
 .navbar_divIconeTopNav {
@@ -128,6 +129,7 @@ nav#navbar_topNav {
     display: flex;
     align-items: center;
     margin-top: 1vh;
+    cursor: pointer;
   }
 
   #navbar_mySidenav {

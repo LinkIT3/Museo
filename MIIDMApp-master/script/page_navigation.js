@@ -9,7 +9,7 @@ window.onscroll = controllaTrasparenzaTopNavbar;
 
 var bodyPagina = document.getElementById("page_render"); //Non coincide con il body
                                                          //vero e proprio, ma con il pezzo dove andranno renderizzate le altre sezioni
-
+var titoloButton = document.getElementById("navbar_titoloTopNav")
 var cercaButton = document.getElementById("bottom-nav_button-C");
 var info_sidebar_button = document.getElementById("info_sidebar");
 var homeButton = document.getElementById("bottom-nav_button-H");
@@ -20,6 +20,11 @@ var lingua_sidebar_button = document.getElementById("lingua_sidebar");
 var segnala_sidebar_button = document.getElementById("segnala_sidebar");
 
 //Listener per le pagine menu laterale
+titoloButton.addEventListener("click", function() {
+    fullHome();
+    caricaPaginaHome();
+});
+
 cercaButton.addEventListener("click", function() {
     fullSearch();
     caricaPaginaCerca();
