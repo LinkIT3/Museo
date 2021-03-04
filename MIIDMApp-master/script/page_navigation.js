@@ -67,6 +67,9 @@ function scompareNavBarBottom() {
 function appareNavBarBottom() {
     document.getElementById("bottom-nav").style.display = "block";
     document.getElementById("bottom-nav_button-qr").style.display = "block";
+    if(window.innerHeight > window.innerWidth) {
+        document.getElementById("bottom-nav_button-qr").style.display = "none";
+    }
 }
 
 //Richiesta e inserimento della pagina di ricerca nella home
