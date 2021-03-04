@@ -152,7 +152,7 @@ function controllaTrasparenzaTopNavbar() {
 }
 
 function condividi() {
-  if (navigator.share !== undefined) {
+  if (navigator.share != undefined) {
     navigator.share({
       title: 'MIIDM App',
       text: 'Vieni a scoprire il MIIDM!',

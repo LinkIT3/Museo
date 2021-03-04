@@ -26,20 +26,10 @@
     <div id = "loghi_social">
       <a href = ""> <img src = "res/facebook.png" /> </a>
       <a href = "https://www.instagram.com/miidm_isis/"> <img src = "res/instagram.png" /> </a>
-      <img src = "res/share.png" id = "share"/>
+      <div id = "share_div">
+        <img src = "res/share.png" id = "share" onclick="condividi()">
+      </div>
     </div>
 </div>
-<script>
-  document.getElementById("share").addEventListener("click", function () {
-    if (navigator.share !== undefined) {
-      navigator.share({
-        title: 'MIIDM App',
-        text: 'Vieni a scoprire il MIIDM!',
-        url: 'https://databasereperti.altervista.org/',
-      })
-      .then(() => console.log('Successful share'))
-      .catch((error) => console.log('Error sharing', error));
-    }
-    console.log("Sono entrato nella funzione");
-  });
-</script>
+
+
