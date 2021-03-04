@@ -117,7 +117,8 @@ input:focus::placeholder, textarea:focus::placeholder {
     /*margin-top: -25vh;*/
     text-align: center;
     height: 8vh;
-    width: 100%;
+    width: 100%;   
+    position:relative;         
     display: flex;
     justify-content: center;
   }
@@ -129,34 +130,63 @@ input:focus::placeholder, textarea:focus::placeholder {
   }
   
   #segnalaUnBug_divForm {
-    height: calc(100% - 6vh - 15vh);
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     align-items: center;
-    display: table;
+    display: inline-block;
+    margin-top: 7vh;
+  }
+
+  #credenziali {
+    position:absolute;
+    right:50%;
+    width:50vw;
+    float:right;
+    margin-right: -1vw;
+  }
+
+  #inviaemail{
+    position:absolute;
+    left:50%;
+    width:50vw;
+    float:left;
+    margin-left: 1vw;
   }
   
   .segnalaUnBug_titoloDivForm {
-    font-size: 4vw; 
+    font-size: 3vw; 
     color: #34495e;
-    margin-left: 10vw;
+    align-items: center;
+    margin-left: 3vw;
   }
   
   input[type=text], textarea {
     height: 5vh;
-    width: 80vw;
+    width: 45vw;
     padding: 2vw 2vw;
-    margin-left: 10vw;
+    margin-left: 2vw;
     display: inline-block;
     border: 0.5vw solid #ccc;
     border-radius: 4vw;
     box-sizing: border-box;
-    font-size: 3vw;
+    font-size: 2vw;
+    margin-top: 2vw;
   }
 
   input[type=text]:focus, textarea:focus, button:focus {
       outline: none;
   }
   
+  #invia{
+    width: 80vw;
+    height: 5vh;
+    position: relative;
+    margin-top: 12vh;
+    margin-left: -41vw;
+  }
+  #testoEmail{
+    margin-top: 2vw;
+  }
   #segnalaUnBug_tastoInvia {
     width: 80vw;
     height: 5vh;
@@ -166,7 +196,7 @@ input:focus::placeholder, textarea:focus::placeholder {
     border: none;
     border-radius: 4vw;
     cursor: pointer;
-    margin-left: 10vw;
+    margin-left: 0vw;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -179,6 +209,7 @@ input:focus::placeholder, textarea:focus::placeholder {
     max-width: 80vw;
     max-height: 23vh;
     height: 23vh;
+    margin-top: 2vw;
   }
   
   .segnalaUnBug_altriInput {
