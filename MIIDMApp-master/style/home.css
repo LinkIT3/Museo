@@ -119,3 +119,7 @@ span#title_le {animation: animazione_le 1s ease forwards; animation-delay: 1.5s;
 span#title_tecnologie {animation: animazione_tecnologie 1s ease forwards; animation-delay: 1.8s; left: 100vw;}
 span#title_del2 {animation: animazione_del2 1s ease forwards; animation-delay: 1.8s; right: 100vw;}
 span#title_futuro {display: block; animation: animazione_futuro 2s ease forwards; animation-delay: 2.3s; opacity: 0}
+
+@media screen and (orientation: landscape) {
+    
+}
