@@ -126,6 +126,7 @@ article#Orari {
     box-sizing: border-box;
     grid-template-areas: ".  ."
                          ".  O";
+                         /*greve*/
 }
 article#Orari div {grid-area: O;}
 
