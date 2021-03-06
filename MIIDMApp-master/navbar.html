@@ -64,6 +64,13 @@
   <div id = "divOscuramento" onclick="navbar_closeSidenav()"></div>
 
 <script>
+  document.addEventListener('swiped-right', function(e) { //swipe verso destra, apre la sidenav
+    navbar_openSidenav();
+    });
+  document.addEventListener('swiped-left', function(e) { //swipe verso sinisra, chiude la sidenav 
+    navbar_closeSidenav();
+    });
+
   if(window.innerHeight >= window.innerWidth)
   {
     function navbar_openSidenav() {
