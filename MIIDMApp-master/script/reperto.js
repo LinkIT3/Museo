@@ -67,6 +67,18 @@ function stamparep(rep){
             img.classList.add("mySlides");
         }
         mostraImmagine(0);
+
+        //controllo del numero di immagini per determinare la presenza o no delle frecce di scorrimento
+        var frecciaIndietro = document.getElementById("rep_but_left");
+        var frecciaAvanti = document.getElementById("rep_but_right");
+        if(parseInt(rep.nmedia) != 1){
+            frecciaIndietro.style.display = "block";
+            frecciaAvanti.style.display = "block";
+        }
+        else{
+            frecciaIndietro.style.display = "none";
+            frecciaAvanti.style.display = "none";
+        }
     }
     else{
         var divImg = document.getElementById("container_div_img");
