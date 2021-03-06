@@ -155,16 +155,3 @@ function controllaTrasparenzaTopNavbar() {
     document.getElementById("navbar_topNav").style.backgroundColor = "rgba(241, 196, 14, 1)";
   }
 }
-
-function condividi() {
-  if (navigator.share != undefined) {
-    navigator.share({
-      title: 'MIIDM App',
-      text: 'Vieni a scoprire il MIIDM!',
-      url: 'https://databasereperti.altervista.org/',
-    })
-    .then(() => console.log('Successful share'))
-    .catch((error) => console.log('Error sharing', error));
-  }
-  console.log("Sono entrato nella funzione");
-}

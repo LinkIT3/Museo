@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <p id = "didascaliaInfo">Siamo i ragazzi della <strong>5^A informatica</strong> dell'a.s. 2019/2020 dell'<strong>I.T. "Luigi Di Maggio"</strong> di San Giovanni Rotondo e questo è il nostro lavoro <strong>per voi!</strong></p>
 
 <div id = "info_container_sez">
@@ -26,10 +27,22 @@
     <div id = "loghi_social">
       <a href = ""> <img src = "res/facebook.png" /> </a>
       <a href = "https://www.instagram.com/miidm_isis/"> <img src = "res/instagram.png" /> </a>
-      <div id = "share_div">
-        <img src = "res/share.png" id = "share" onclick="condividi()">
-      </div>
+      <img src = "res/share.png" id = "share" onclick="condividi()">
     </div>
 </div>
 
-
+<script>
+  function condividi(){
+    if (navigator.canShare && navigator.canShare({ files: filesArray })) {  
+      navigator.share({
+        title: 'MIIDM App',
+        text: 'Vieni a scoprire il MIIDM!',
+        url: 'https://databasereperti.altervista.org/',
+        })
+        .then(() => console.log('Successful share'))
+        .catch((error) => console.log('Error sharing', error));
+    } else {
+      console.log('Share not supported on this browser, do it the old way.');
+    }
+  }
+</script>
