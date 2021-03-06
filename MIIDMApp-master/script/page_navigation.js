@@ -7,10 +7,10 @@
 //Nel caso in cui si scorra, rendi la TopBar trasparente
 window.onscroll = controllaTrasparenzaTopNavbar;
 
-document.addEventListener('swiped', function(e) {
+document.addEventListener('swiped-left', function(e) {
     alert("pasquale finocchio");
-    alert(e.target); // the element that was swiped
-    alert(e.detail.dir); // swiped direction
+    //alert(e.target); // the element that was swiped
+    //alert(e.detail.dir); // swiped direction
 });
 
 var bodyPagina = document.getElementById("page_render"); //Non coincide con il body
