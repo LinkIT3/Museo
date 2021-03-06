@@ -16,6 +16,7 @@
     outline: none;
     z-index: 3;
 }
+
 #bottom-nav_button-qr img {
     position: absolute;
     margin: 0;
@@ -114,4 +115,41 @@
     #bottom-nav_button-qr img {
         display:none;
     }
+    #bottom-nav {
+        display:none;
+    }
+    #bottom-nav table {
+        display:none;
+    }
+    #nav_options {
+        display:none;
+    }
+    #nav_options td {
+        display:none;
+    }
+    
+    .bottom-nav_button-opt {
+        display:none;
+    }
+    #bottom-nav_button-H {
+        display:none;
+    }
+    #bottom-nav_button-C {
+        display:none;
+    }
+    .bottom-nav_button-opt img {
+        display:none;
+    }
+    
+    #homeF {display:none;}
+    #homeFp {display:none;}
+    #homeE {display:none;}
+    #searchF {display:none;}
+    #searchFp {display:none;}
+    #searchE {display:none;}
+    
+    .button-opt_info {
+        display:none;
+    }
+    
 }

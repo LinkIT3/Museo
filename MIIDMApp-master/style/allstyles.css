@@ -46,17 +46,15 @@ body * {
 }
 
 @media screen and (orientation: landscape) {
-   /* #divOscuramento {
-        opacity: 1;
-        top: 0;
-        height: 100vh;
-        z-index: 200;
+
+    #page_render {
+        margin-top: 9vh;
+        background-image: url("../res/bg_2_1920x1080.png");
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        min-height: 91vh;
+        width: 100vw;
     }
 
-    #messaggioGiraTelefono {
-        z-index: 300;
-        display: block;
-    } */
-  
- 
 }
