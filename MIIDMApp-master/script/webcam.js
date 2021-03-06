@@ -72,4 +72,4 @@ function getCodiceQR(w, h) {
     else {
       alert("Nessun codice trovato. Riprova.");
     }
-}
+  }
