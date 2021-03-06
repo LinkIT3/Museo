@@ -17,6 +17,10 @@
         <script src = "script/elencoReperti.js"></script>
         <script type="text/javascript" src="./script/jsQr.js"></script>
         <script type="text/javascript"src = "./script/webcam.js"></script>
+<<<<<<< HEAD
+=======
+        <script type="text/javascript"src = "./script/swiped_events.js"></script>
+>>>>>>> b39e8ae553dd6cee049e59eeb326c38178187be2
 
         <title>MIIDM App</title>
     </head>
