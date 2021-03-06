@@ -11,6 +11,7 @@ var bodyPagina = document.getElementById("page_render"); //Non coincide con il b
                                                          //vero e proprio, ma con il pezzo dove andranno renderizzate le altre sezioni
 var titoloButton = document.getElementById("navbar_titoloTopNav")
 var cercaButton = document.getElementById("bottom-nav_button-C");
+var cercaButtonTop = document.getElementById("navbar_buttonTopNavSearch");
 var info_sidebar_button = document.getElementById("info_sidebar");
 var homeButton = document.getElementById("bottom-nav_button-H");
 var esplora_sidebar_button = document.getElementById("esplora_sidebar");
@@ -29,8 +30,15 @@ cercaButton.addEventListener("click", function() {
     fullSearch();
     caricaPaginaCerca();
 });
+
+cercaButtonTop.addEventListener("click", function() {
+    fullSearchTop();
+    caricaPaginaCerca();
+});
+
 info_sidebar_button.addEventListener("click", function() {
     bothEmpty();
+    bothEmpty2();
     navbar_closeSidenav();
     caricaPaginaInfo();
 });
@@ -79,6 +87,8 @@ function appareNavBarBottom() {
 
 //Richiesta e inserimento della pagina di ricerca nella home
 function caricaPaginaCerca() {
+    if(window.innerHeight < window.innerWidth)
+        fullSearchTop();
     document.getElementById('qrc').src = "./res/qr-code.svg";
     fetch("ricerca.html")
     .then(
@@ -93,6 +103,7 @@ function caricaPaginaCerca() {
         }
     )
     .catch(err => {console.log("Qualcosa è andato storto!" + err);});
+
 }
 
 //Richiesta e inserimento della pagina di info nella home
@@ -123,7 +134,7 @@ function caricaPaginaQR() {
                 alert("Ops, qualcosa è andato storto! Forse sei offline!");
                 return;
             }
-
+ 
             response.text()
             .then(html => {
                 bodyPagina.innerHTML = html;
@@ -146,6 +157,7 @@ function chiudiFinestraSegnalazioneBug() {
 function caricaPaginaHome() {
     document.getElementById('qrc').src = "./res/qr-code.svg";
     bodyPagina.innerHTML = "<div id = 'div_sfondo_home'><p id = 'renderizzatoDiNuovo'>La storia del <br /><strong>passato</strong><br />attraverso le tecnologie del<br /><strong>futuro</strong></p></div>";
+    bothEmpty2();
 }
 
 function controllaTrasparenzaTopNavbar() {

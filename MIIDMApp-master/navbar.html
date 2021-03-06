@@ -1,10 +1,36 @@
 <nav id = "navbar_topNav">
   <div class = "navbar_divIconeTopNav"><img class = "navbar_iconeTopNav" id = "hamburgerButton" src = "./res/hamburgerButton.svg" onclick="navbar_openSidenav()"></img></div>
   <div id = "navbar_divTitoloTopNav"><a id = "navbar_titoloTopNav">MIIDM App</a></div>
-  <div class = "navbar_divIconeTopNav"><img id = "navbar_logoTopNav" class = "navbar_iconeTopNav" src = "./res/logo2.png"></img></div>
-  <div class = "navbar_divIconeTopNav"><img id = "navbar_logoTopNavSearch" class = "navbar_iconeTopNav" src = "./res/search_e.svg"></img></div>
+  <div class = "navbar_divIconeTopNav">   
+    <img id = "navbar_logoTopNav" class = "navbar_iconeTopNav" src = "./res/logo2.png"></img>
+    <button id = "navbar_buttonTopNavSearch" class = "navbar_iconeTopNav">
+      <img id="navbar_logoTopNavSearch" src="./res/search_e2.svg"/>
+    </button>
+    <script>
+      if(window.innerHeight < window.innerWidth)
+      {
+          /*function animOptSF(){ //operazioni dopo 150ms dal click di Cerca
+          document.getElementById('homeE').style.top = "calc(45% - 2.25vh)";
+          document.getElementById('searchF').style.opacity = "1";
+          document.getElementById('searchE').style.opacity = "0";
+          }*/
+          function fullSearchTop(){
+            document.getElementById ('navbar_logoTopNavSearch').src = "./res/search_f2.svg";
+            setTimeout(animOptSF, 150);
+          }
+          /*Rende entrambe le icone, sia "Home" che "Cerca", deselezionate*/
+          function bothEmpty2() {
+          // quando si preme qualsiasi cosa dopo il pulsante Cerca (es. sezione o Search)
+            document.getElementById ('navbar_logoTopNavSearch').src = "./res/search_e2.svg";
+          }
 
+      }
+      
+    </script>
+  </div>
+  
 </nav>
+
   <nav id="navbar_mySidenav">
     <div class = "navbar_divSelezioniSidenav" id = "esplora_sidebar">
       <div class = "navbar_divIconeSelezioniSidenav "><img class = "navbar_iconeSelezioniSidenav " src = "./res/esplora.svg"></img></div>
