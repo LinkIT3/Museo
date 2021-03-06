@@ -8,8 +8,9 @@
 window.onscroll = controllaTrasparenzaTopNavbar;
 
 document.addEventListener('swiped', function(e) {
-    console.log(e.target); // the element that was swiped
-    console.log(e.detail.dir); // swiped direction
+    alert("pasquale finocchio");
+    alert(e.target); // the element that was swiped
+    alert(e.detail.dir); // swiped direction
 });
 
 var bodyPagina = document.getElementById("page_render"); //Non coincide con il body
@@ -159,4 +160,17 @@ function controllaTrasparenzaTopNavbar() {
   } else {
     document.getElementById("navbar_topNav").style.backgroundColor = "rgba(241, 196, 14, 1)";
   }
+}
+
+function condividi() {
+  if (navigator.share != undefined) {
+    navigator.share({
+      title: 'MIIDM App',
+      text: 'Vieni a scoprire il MIIDM!',
+      url: 'https://databasereperti.altervista.org/',
+    })
+    .then(() => console.log('Successful share'))
+    .catch((error) => console.log('Error sharing', error));
+  }
+  console.log("Sono entrato nella funzione");
 }
