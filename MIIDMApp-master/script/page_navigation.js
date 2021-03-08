@@ -40,6 +40,8 @@ cercaButtonTop.addEventListener("click", function() {
 
 info_sidebar_button.addEventListener("click", function() {
     bothEmpty();
+    if(window.innerHeight < window.innerWidth)
+        bothEmpty2();
     navbar_closeSidenav();
     caricaPaginaInfo();
 });
