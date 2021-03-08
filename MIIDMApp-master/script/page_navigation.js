@@ -20,25 +20,31 @@ var dona_sidebar_button = document.getElementById("dona_sidebar");
 var lingua_sidebar_button = document.getElementById("lingua_sidebar");
 var segnala_sidebar_button = document.getElementById("segnala_sidebar");
 
-//Listener per le pagine menu laterale
 titoloButton.addEventListener("click", function() {
-    fullHome();
-    caricaPaginaHome();
+    if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/) {
+        fullHome();
+        caricaPaginaHome();
+    }
 });
 
+//Listener per le pagine menu laterale
 cercaButton.addEventListener("click", function() {
     fullSearch();
     caricaPaginaCerca();
 });
 
 cercaButtonTop.addEventListener("click", function() {
-    fullSearchTop();
-    caricaPaginaCerca();
+    if(window.innerHeight < window.innerWidth)
+    {
+        fullSearchTop();
+        caricaPaginaCerca();
+    }
 });
 
 info_sidebar_button.addEventListener("click", function() {
     bothEmpty();
-    bothEmpty2();
+    if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/)
+        bothEmpty2();
     navbar_closeSidenav();
     caricaPaginaInfo();
 });
@@ -80,14 +86,15 @@ function scompareNavBarBottom() {
 function appareNavBarBottom() {
     document.getElementById("bottom-nav").style.display = "block";
     document.getElementById("bottom-nav_button-qr").style.display = "block";
-    if(window.innerHeight < window.innerWidth) {
+    if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/) {
         document.getElementById("bottom-nav_button-qr").style.display = "none";
+        document.getElementById("bottom-nav").style.display = "none";
     }
 }
 
 //Richiesta e inserimento della pagina di ricerca nella home
 function caricaPaginaCerca() {
-    if(window.innerHeight < window.innerWidth)
+    if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/)
         fullSearchTop();
     document.getElementById('qrc').src = "./res/qr-code.svg";
     fetch("ricerca.html")
@@ -179,4 +186,24 @@ function condividi() {
     .catch((error) => console.log('Error sharing', error));
   }
   console.log("Sono entrato nella funzione");
+}
+
+function Device_Type() {
+    var Return_Device; 
+    if(/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|android|iemobile|w3c|acs\-|alav|alca|amoi|audi|avan|benq|bird|blac|blaz|brew|cell|cldc|cmd\-|dang|doco|eric|hipt|inno|ipaq|java|jigs|kddi|keji|leno|lg\-c|lg\-d|lg\-g|lge\-|maui|maxo|midp|mits|mmef|mobi|mot\-|moto|mwbp|nec\-|newt|noki|palm|pana|pant|phil|play|port|prox|qwap|sage|sams|sany|sch\-|sec\-|send|seri|sgh\-|shar|sie\-|siem|smal|smar|sony|sph\-|symb|t\-mo|teli|tim\-|tosh|tsm\-|upg1|upsi|vk\-v|voda|wap\-|wapa|wapi|wapp|wapr|webc|winw|winw|xda|xda\-) /i.test(navigator.userAgent)) {
+        if(/(tablet|ipad|playbook)|(android(?!.*(mobi|opera mini)))/i.test(navigator.userAgent)) {
+            Return_Device = 'Tablet';
+        }
+        else {
+            Return_Device = 'Mobile';
+        }
+    }
+    else if(/(tablet|ipad|playbook)|(android(?!.*(mobi|opera mini)))/i.test(navigator.userAgent)) {
+        Return_Device = 'Tablet';
+    }
+    else {
+        Return_Device = 'Desktop';
+    }
+
+    return Return_Device;
 }
