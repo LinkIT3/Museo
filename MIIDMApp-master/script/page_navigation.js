@@ -88,6 +88,7 @@ function appareNavBarBottom() {
     document.getElementById("bottom-nav_button-qr").style.display = "block";
     if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/) {
         document.getElementById("bottom-nav_button-qr").style.display = "none";
+        document.getElementById("bottom-nav").style.display = "none";
     }
 }
 
