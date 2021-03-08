@@ -6,4 +6,4 @@ function rilevaInvio(event) //se si preme invio viene avviata la ricerca
         cercaRepertiPerParolaChiave(document.getElementById('keyword').value);
 }
 
-/* qui potrebbero anche essere aggiunte le funzioni per l'implementazione del tasto indietro
+/* qui potrebbero anche essere aggiunte le funzioni per l'implementazione del tasto indietro */
