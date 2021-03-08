@@ -22,8 +22,10 @@ var segnala_sidebar_button = document.getElementById("segnala_sidebar");
 
 //Listener per le pagine menu laterale
 titoloButton.addEventListener("click", function() {
-    fullHome();
-    caricaPaginaHome();
+    if(window.innerHeight < window.innerWidth) {
+        fullHome();
+        caricaPaginaHome();
+    }
 });
 
 cercaButton.addEventListener("click", function() {
