@@ -124,7 +124,7 @@ function caricaPaginaInfo() {
     .catch(err => {console.log("Qualcosa è andato storto!" + err);});
 }
 
-//Richiesta e inserimento della pagina di info nella home
+//Richiesta e inserimento della pagina  qr nella home
 function caricaPaginaQR() {
     console.log("Pagina QR");
     fetch("qrscanner.html")
@@ -138,7 +138,7 @@ function caricaPaginaQR() {
             response.text()
             .then(html => {
                 bodyPagina.innerHTML = html;
-                avviaWebcam();
+                avviaScansione();
             });
         }
     )
