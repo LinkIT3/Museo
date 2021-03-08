@@ -21,7 +21,7 @@ var lingua_sidebar_button = document.getElementById("lingua_sidebar");
 var segnala_sidebar_button = document.getElementById("segnala_sidebar");
 
 titoloButton.addEventListener("click", function() {
-    {
+    if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/) {
         fullHome();
         caricaPaginaHome();
     }
@@ -43,7 +43,7 @@ cercaButtonTop.addEventListener("click", function() {
 
 info_sidebar_button.addEventListener("click", function() {
     bothEmpty();
-    if(window.innerHeight < window.innerWidth)
+    if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/)
         bothEmpty2();
     navbar_closeSidenav();
     caricaPaginaInfo();
