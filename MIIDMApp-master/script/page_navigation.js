@@ -21,7 +21,7 @@ var lingua_sidebar_button = document.getElementById("lingua_sidebar");
 var segnala_sidebar_button = document.getElementById("segnala_sidebar");
 
 titoloButton.addEventListener("click", function() {
-    if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/) {
+    {
         fullHome();
         caricaPaginaHome();
     }
@@ -34,13 +34,16 @@ cercaButton.addEventListener("click", function() {
 });
 
 cercaButtonTop.addEventListener("click", function() {
-    fullSearchTop();
-    caricaPaginaCerca();
+    if(window.innerHeight < window.innerWidth)
+    {
+        fullSearchTop();
+        caricaPaginaCerca();
+    }
 });
 
 info_sidebar_button.addEventListener("click", function() {
     bothEmpty();
-    if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/)
+    if(window.innerHeight < window.innerWidth)
         bothEmpty2();
     navbar_closeSidenav();
     caricaPaginaInfo();
