@@ -1,6 +1,5 @@
-<!DOCTYPE html>
 <div class = "ricerca_input_e_button">
-    <input type = "text" id = "keyword" onfocus="scompareNavBarBottom()" onblur="appareNavBarBottom()"/>
+    <input type = "text" id = "keyword" onfocus="scompareNavBarBottom()" onblur="appareNavBarBottom()" onkeypress="rilevaInvio(event)">
     <button id = "bottone_cerca_input" onclick = "cercaRepertiPerParolaChiave(document.getElementById('keyword').value)">Cerca</button>
 </div>
 <p id = "didascaliaRicerca">Cerca i <strong>reperti</strong> usando la <strong>barra</strong> qui sopra o visualizzali per <strong>sezione</strong>
