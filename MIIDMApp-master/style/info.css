@@ -161,13 +161,13 @@ article#Orari div {grid-area: O;}
                          'O  P';
   }
 
-  /*article.informazione {
+  article.informazione {
       background-color: #f1c40e;
       width: 100%;
       height: 100%;
       border: 0 !important;
       box-sizing: border-box;
-  }*/
+  }
 
   article h1 {
     font-size: 2rem;
@@ -189,7 +189,6 @@ article#Orari div {grid-area: O;}
     height: 35%;
     margin-left: 5%;
     margin-top: 20%;
-    /*float: center;*/
   }
 
   div#trovandoci {    
@@ -213,26 +212,6 @@ article#Orari div {grid-area: O;}
     width: 203%;
     height: 120%;
   }
-
-  /*div#loghi_social img{
-    width: 10vw;
-    height: 10vw;
-    margin-left: 15%;
-    margin-top: 4%;
-    float: left;
-  }*/
-
-  /*article#Crediti {
-      border-left: 2px solid #f1c40e;
-      border-top: 2px solid #f1c40e;
-      grid-template-columns: 15px auto;
-      grid-template-rows: 15px auto;
-      border: 10 !important;
-      box-sizing: border-box;
-      grid-template-areas: "C  ."
-                           ".  .";
-  }
-  article#Crediti div {grid-area: C;}*/
 
   article#Contatti {      
     border-right: 2px solid #f1c40e;
