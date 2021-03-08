@@ -67,12 +67,12 @@ p.intestazione {
 div#container_sezioni {
     display: grid;
     width: 66vw;
-    margin-top: 3vw;
+    margin-top: 20vw;
     margin-left: 17%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-gap: 15px;
-    height: 6vh;
+    height: 66vw;
     transform: rotate(45deg);
 }
 
