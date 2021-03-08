@@ -25,6 +25,7 @@ titoloButton.addEventListener("click", function() {
     if(window.innerHeight < window.innerWidth) {
         fullHome();
         caricaPaginaHome();
+        //
     }
 });
 
