@@ -22,17 +22,16 @@ input#keyword {
     color: #f1c40e;
     background-color: rgb(0,0,0,0.3);
     width: 100%;
-    padding-left: 3.5rem;
+    padding-left: 2rem;
     transition: all .25s ease;
     box-sizing: border-box;
     flex: 2; /*Deve essere il doppio del bottone*/
-    margin-top: 0;
     margin-right: 15px;
     margin-left: 0;
 
     /*Icona di ricerca*/
     background-image: url("../res/inputbar_searchIconGialla.png");
-    background-position: 5px;
+    background-position: 7px;
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -67,14 +66,14 @@ p.intestazione {
 
 div#container_sezioni {
     display: grid;
-    width: 50vw;
+    width: 66vw;
     margin-top: 3vw;
-    margin-left: 25%;
+    margin-left: 17%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-gap: 15px;
-    height: 50vh;
-    transform: rotate(0deg);
+    height: 6vh;
+    transform: rotate(45deg);
 }
 
 article.sezione {
@@ -86,7 +85,7 @@ article.sezione > div {background-color: #f1c40e;}
 article.sezione div.immagine_testo_sezione {
     width: 100%;
     height: 100%;
-    transform: rotate(0deg);
+    transform: rotate(-45deg);
     background-color: transparent;
 
     display: flex;
@@ -238,7 +237,7 @@ div#container_sezioni {
     display: grid;
     width: 50vw;
     margin-top: 2vw;
-    margin-left: 17%;
+    margin-left: 25%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-gap: 15px;
