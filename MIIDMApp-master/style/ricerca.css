@@ -156,12 +156,12 @@ article#S div {grid-area: S;}
 
 @media only screen and (min-aspect-ratio: 5/8) {
     div#container_sezioni {
-        transform: rotate(0deg);
+        transform: rotate(45deg);
         margin-top: 5vw;
     }
 
     article.sezione div.immagine_testo_sezione {
-        transform: rotate(0deg);
+        transform: rotate(-45deg);
     }
 }
 
