@@ -1,10 +1,10 @@
-var input;
-var imageCapture;
+//var input;
+//var imageCapture;
 
 function avviaScansione(){
   const html5QrCode = new Html5Qrcode("contenitore_video");
   const config = { fps: 2, qrbox: 250 };
-  const qrCodeSuccessCallback = message => {html5QrCode.stop(), alert(message), getCodiceQRNuovo(message)};
+  const qrCodeSuccessCallback = message => {html5QrCode.stop(), console.log("ID: " + message), getCodiceQRNuovo(message)};
   html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
 }
 
