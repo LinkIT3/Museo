@@ -59,6 +59,9 @@ esplora_sidebar_button.addEventListener("click", function() {
 });
 qr_sidebar_button.addEventListener("click", function() {
     navbar_closeSidenav();
+    bothEmpty();
+    if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/)
+        bothEmpty2();
     setTimeout(clickQR, 500); //Avvia l'animazione del QR dopo che si è chiusa la sidenav
 });
 dona_sidebar_button.addEventListener("click", function() {
