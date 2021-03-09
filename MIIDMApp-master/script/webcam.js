@@ -1,6 +1,17 @@
 var input;
 var imageCapture;
 
+function avviaScansione(){
+  const html5QrCode = new Html5Qrcode("contenitore_video");
+  const config = { fps: 2, qrbox: 250 };
+  const qrCodeSuccessCallback = message => {html5QrCode.stop(), alert(message), getCodiceQRNuovo(message)};
+  html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
+}
+
+function getCodiceQRNuovo(code){
+  visualizzaReperto(code);
+}
+/*
 function avviaWebcam() {
     input = document.querySelector('input[type="range"]');
     navigator.mediaDevices.getUserMedia({video: { facingMode: { exact: "environment" } } })
@@ -42,7 +53,7 @@ function onTakePhotoButtonClick() {
 }
 
 /* Utils */
-
+/*
 function drawCanvas(img) {
   const canvas = document.querySelector('canvas');
   canvas.style.width = "600px";
@@ -73,3 +84,5 @@ function getCodiceQR(w, h) {
       alert("Nessun codice trovato. Riprova.");
     }
   }
+*/
+  
