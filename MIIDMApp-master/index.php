@@ -14,17 +14,19 @@
 
         <link rel = "stylesheet" href="./style/allstyles.css" />
         <link rel = "manifest" href = "manifest.json" />
-        <script src = "script/elencoReperti.js"></script>
-        <script type="text/javascript"src = "./script/webcam.js"></script>
-        <script type="text/javascript"src = "./script/swiped_events.js"></script>
-        <script type="text/javascript"src = "./script/rileva_invio.js"></script>
-        <script type="text/javascript" src="./script/html5-qrcode.min.js"></script>
+        <script type = "text/javascript" src = "./script/elencoReperti.js"></script>
+        <script type = "text/javascript" src = "./script/webcam.js"></script>
+        <script type = "text/javascript" src = "./script/swiped_events.js"></script>
+        <script type = "text/javascript" src = "./script/rileva_invio.js"></script>
+        <script type = "text/javascript" src = "./script/html5-qrcode.min.js"></script>
+        <script type = "text/javascript" src = "./script/page_navigation.js"></script>
 
 
         <title>MIIDM App</title>
     </head>
     <body>
-        <?php include("navbar.html"); ?>
+        <?php include("navbar.html");?>
+        
         <div id = "page_render">
             <!--Qui vengono caricate le pagine interne alla shell-->
 
