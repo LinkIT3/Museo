@@ -7,6 +7,40 @@
 //Nel caso in cui si scorra, rendi la TopBar trasparente
 window.onscroll = controllaTrasparenzaTopNavbar;
 
+//window.onbeforeunload = function() { return "exit"; };
+
+document.onmouseover = function() {
+    //User's mouse is inside the page.
+    window.innerDocClick = true;
+}
+
+document.onmouseleave = function() {
+    //User's mouse has left the page.
+    window.innerDocClick = false;
+}
+
+window.onhashchange = function() {
+    if (window.innerDocClick) {
+        window.innerDocClick = false;
+    } else {
+        if (window.location.hash != '#undefined') {
+            goBack();
+        } 
+        else {
+            //history.pushState("", document.title, caricaPaginaHome());
+            //location.reload();
+            window.onbeforeunload = function() { return "exit"; };
+        }
+    }
+}
+
+function goBack() {
+    window.location.hash = window.location.lasthash[window.location.lasthash.length-1];
+    var link = $(this).html();
+    $(this).contents().wrap('<a href="http://localhost/Cartella%20programmi/Museo/MIIDMApp-master/"></a>');
+    window.location.lasthash.pop();
+}
+
 var bodyPagina = document.getElementById("page_render"); //Non coincide con il body
                                                          //vero e proprio, ma con il pezzo dove andranno renderizzate le altre sezioni
 var titoloButton = document.getElementById("navbar_titoloTopNav")
@@ -31,6 +65,7 @@ titoloButton.addEventListener("click", function() {
 cercaButton.addEventListener("click", function() {
     fullSearch();
     caricaPaginaCerca();
+    history.pushState("", document.title, "http://localhost/Cartella%20programmi/Museo/MIIDMApp-master/");
 });
 
 cercaButtonTop.addEventListener("click", function() {
@@ -38,6 +73,7 @@ cercaButtonTop.addEventListener("click", function() {
     {
         fullSearchTop();
         caricaPaginaCerca();
+        history.pushState("", document.title, "http://localhost/Cartella%20programmi/Museo/MIIDMApp-master/");
     }
 });
 
@@ -47,6 +83,7 @@ info_sidebar_button.addEventListener("click", function() {
         bothEmpty2();
     navbar_closeSidenav();
     caricaPaginaInfo();
+    history.pushState("", document.title, "http://localhost/Cartella%20programmi/Museo/MIIDMApp-master/");
 });
 homeButton.addEventListener("click", function() {
     fullHome();
