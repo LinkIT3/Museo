@@ -164,7 +164,8 @@ function chiudiFinestraSegnalazioneBug() {
 function caricaPaginaHome() {
     document.getElementById('qrc').src = "./res/qr-code.svg";
     bodyPagina.innerHTML = "<div id = 'div_sfondo_home'><p id = 'renderizzatoDiNuovo'>La storia del <br /><strong>passato</strong><br />attraverso le tecnologie del<br /><strong>futuro</strong></p></div>";
-    bothEmpty2();
+    if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/)
+        bothEmpty2();
 }
 
 function controllaTrasparenzaTopNavbar() {
