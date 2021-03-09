@@ -15,7 +15,6 @@
         <link rel = "stylesheet" href="./style/allstyles.css" />
         <link rel = "manifest" href = "manifest.json" />
         <script src = "script/elencoReperti.js"></script>
-        <script type="text/javascript" src="./script/jsQr.js"></script>
         <script type="text/javascript"src = "./script/webcam.js"></script>
         <script type="text/javascript"src = "./script/swiped_events.js"></script>
         <script type="text/javascript"src = "./script/rileva_invio.js"></script>
