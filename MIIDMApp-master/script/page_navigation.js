@@ -34,6 +34,8 @@ window.onhashchange = function() {
         }
     }
 }
+
+Aleeee smettila con queste cazzateeee
 */
 
 function goBack() {
