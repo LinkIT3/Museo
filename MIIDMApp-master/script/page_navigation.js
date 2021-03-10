@@ -7,7 +7,7 @@
 //Nel caso in cui si scorra, rendi la TopBar trasparente
 window.onscroll = controllaTrasparenzaTopNavbar;
 
-//window.onbeforeunload = function() { return "exit"; };
+window.onbeforeunload = function() { return "exit"; };
 
 /*
 document.onmouseover = function() {
@@ -34,7 +34,6 @@ window.onhashchange = function() {
         }
     }
 }
-*/
 
 function goBack() {
     window.location.hash = window.location.lasthash[window.location.lasthash.length-1];
@@ -42,6 +41,7 @@ function goBack() {
     $(this).contents().wrap('<a href="http://localhost/Cartella%20programmi/Museo/MIIDMApp-master/"></a>');
     window.location.lasthash.pop();
 }
+*/
 
 var bodyPagina = document.getElementById("page_render"); //Non coincide con il body
                                                          //vero e proprio, ma con il pezzo dove andranno renderizzate le altre sezioni
@@ -67,7 +67,7 @@ titoloButton.addEventListener("click", function() {
 cercaButton.addEventListener("click", function() {
     fullSearch();
     caricaPaginaCerca();
-    history.pushState("", document.title, "http://localhost/Cartella%20programmi/Museo/MIIDMApp-master/");
+    //history.pushState("", document.title, "http://localhost/Cartella%20programmi/Museo/MIIDMApp-master/");
 });
 
 cercaButtonTop.addEventListener("click", function() {
@@ -75,7 +75,7 @@ cercaButtonTop.addEventListener("click", function() {
     {
         fullSearchTop();
         caricaPaginaCerca();
-        history.pushState("", document.title, "http://localhost/Cartella%20programmi/Museo/MIIDMApp-master/");
+        //history.pushState("", document.title, "http://localhost/Cartella%20programmi/Museo/MIIDMApp-master/");
     }
 });
 
@@ -85,7 +85,7 @@ info_sidebar_button.addEventListener("click", function() {
         bothEmpty2();
     navbar_closeSidenav();
     caricaPaginaInfo();
-    history.pushState("", document.title, "http://localhost/Cartella%20programmi/Museo/MIIDMApp-master/");
+    //history.pushState("", document.title, "http://localhost/Cartella%20programmi/Museo/MIIDMApp-master/");
 });
 homeButton.addEventListener("click", function() {
     fullHome();
