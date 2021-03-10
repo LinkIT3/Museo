@@ -160,7 +160,10 @@ function stampaReperto(reperto) {
     //Aggiungi tutto alla pagina
     document.getElementById("page_render").appendChild(rep);
 }
-
+if(Device_Type() == 'Desktop')
+{
+    //metti la funzione qua
+}
 //A partire dalla sezione e dal codice, genera il nome della (prima) foto di un reperto
 function nomeFoto(sezione, cod, nImmagine) {
     var nome = "";
@@ -212,4 +215,24 @@ function ricavaAutore(aut) {
         return aut.substring(0, 9) + "...";
     }
     return aut;
+}
+
+function Device_Type() {
+    var Return_Device; 
+    if(/(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|android|iemobile|w3c|acs\-|alav|alca|amoi|audi|avan|benq|bird|blac|blaz|brew|cell|cldc|cmd\-|dang|doco|eric|hipt|inno|ipaq|java|jigs|kddi|keji|leno|lg\-c|lg\-d|lg\-g|lge\-|maui|maxo|midp|mits|mmef|mobi|mot\-|moto|mwbp|nec\-|newt|noki|palm|pana|pant|phil|play|port|prox|qwap|sage|sams|sany|sch\-|sec\-|send|seri|sgh\-|shar|sie\-|siem|smal|smar|sony|sph\-|symb|t\-mo|teli|tim\-|tosh|tsm\-|upg1|upsi|vk\-v|voda|wap\-|wapa|wapi|wapp|wapr|webc|winw|winw|xda|xda\-) /i.test(navigator.userAgent)) {
+        if(/(tablet|ipad|playbook)|(android(?!.*(mobi|opera mini)))/i.test(navigator.userAgent)) {
+            Return_Device = 'Tablet';
+        }
+        else {
+            Return_Device = 'Mobile';
+        }
+    }
+    else if(/(tablet|ipad|playbook)|(android(?!.*(mobi|opera mini)))/i.test(navigator.userAgent)) {
+        Return_Device = 'Tablet';
+    }
+    else {
+        Return_Device = 'Desktop';
+    }
+
+    return Return_Device;
 }

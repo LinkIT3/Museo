@@ -65,7 +65,7 @@ div#trovandoci img{
   float: left;
 }
 
-div#loghi_social {
+/*div#loghi_social {
   margin-left: 0 auto;
   background-color: #f1c40e;
   width: 210%;
@@ -78,7 +78,7 @@ div#loghi_social img{
   margin-left: 15%;
   margin-top: 4%;
   float: left;
-}
+}*/
 
 article#Crediti {
     border-left: 2px solid #f1c40e;
@@ -132,13 +132,18 @@ article#Orari div {grid-area: O;}
 
 @media screen and (orientation: landscape) {
   
+  /*stile titolini article*/
+  article h1 {
+    font-size: 2.5rem;
+  }
+
   p#didascaliaInfo {
-    /*width: 85%;
+    width: 85%;
     font-size: 1.2rem;
     color: #f1c40e;
     text-align: center;
     margin: 0 auto;
-    padding: 1rem 0 1.5rem 0;*/
+    padding: 1rem 0 1.5rem 0;
     display:none;
   }
 
@@ -147,8 +152,8 @@ article#Orari div {grid-area: O;}
     width: 75vw;
     margin-top: 2.5vw;
     margin-left: 13%;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 70% 30% auto;
+    grid-template-rows: 55% 32.5% 12.5%;
     transform: rotate(0deg);
     grid-gap: 15px;
     height: 75vw;
@@ -164,17 +169,129 @@ article#Orari div {grid-area: O;}
 
   /*formattazione di Trovaci*/
   article#Trovaci {
+    margin-top: 3vh;
     border-left: 2px solid #f1c40e;
     border-bottom: 2px solid #f1c40e;
-    grid-template-columns: 15px auto;
-    grid-template-rows: auto 15px;
+    grid-template-columns: 12px auto;
+    grid-template-rows: auto 12px;
     border: 0 !important;
     box-sizing: border-box;
     background-image: url("../res/background_info_maps.png");
     background-size: cover;
-    grid-template-areas: "T  ."
-                         ".  .";
+    grid-column: 1;
+    grid-row: 1;
   }
-  article#Trovaci div {grid-area: T;}
+
+  div#trovandoci {
+    margin-left: 25%;
+    background-color: transparent;
+    width: 60%;
+    height: 60%;
+  }
+  
+  div#trovandoci img{
+    width: 7.9vw;
+    height: 7.9vw;
+    margin-left: 22%;
+    margin-top: 13.5%;
+    float: left;
+  }
+
+  /*formattazione Contatti*/
+  article#Contatti {
+    margin-top: 3vh;
+    border-right: 2px solid #f1c40e;
+    border-top: 2px solid #f1c40e;
+    border: 0 !important;
+    box-sizing: border-box;
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+
+  div#contattaci {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20%;
+    background-color: #f1c40e;
+    width: 60%;
+    height: 60%;
+    gap: 40px;
+  }
+
+  div#contattaci img{
+    width: 7.9vw;
+    height: 7.9vw;
+    margin-left: 5%;
+    margin-top: 11%;
+    float: left;
+  }
+
+  /*formattazione Orari*/
+
+  article#Orari {
+    margin-top: 3vh;
+    border-right: 2px solid #f1c40e;
+    border-bottom: 2px solid #f1c40e;
+    grid-template-columns: auto 15px;
+    grid-template-rows: auto 15px;
+    border: 0 !important;
+    box-sizing: border-box;
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  div#orario{
+      display: flex;
+      margin-top: 8%;
+  }
+
+  div#orario img{
+    width: 10vw;
+    height: 10vw;
+    margin-left: 11%;
+  }
+
+  div#orario1 {
+    margin-left: 15%;
+    background-color: transparent;
+    width: 60%;
+    height: 80%;
+  }
+
+  div#orario2{
+    background-color: transparent;
+    width: 60%;
+    height: 80%;
+  }
+
+  article#Orari h5 {
+    font-size: 1.5rem;
+  }
+
+  /*formattazione Crediti*/
+
+  article#Crediti {
+    margin-top: 3vh;
+    border-left: 2px solid #f1c40e;
+    border-top: 2px solid #f1c40e;
+    grid-template-columns: 15px auto;
+    grid-template-rows: 15px auto;
+    border: 0 !important;
+    box-sizing: border-box;
+    grid-column: 1 / 3;
+    grid-row: 3;
+  }
+
+  article#Crediti h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  article#Crediti h5 {
+    font-size: 1rem;
+    text-align: center;
+    /*margin-left: 6%;*/
+  }
 
 }
