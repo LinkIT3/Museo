@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="it" dir="ltr">
     <head>
+        <link rel="icon" href="favicon.ico">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0">
         <meta name="theme-color" content="#f1c40e">
@@ -57,3 +58,15 @@
         </p>
     </body>
 </html>
+
+<script>
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+       .register('service-worker.js')
+       .then(function(swReg) {
+           console.log("Service Worker Registered");
+           swRegistration = swReg;
+           //initializeUI();
+       })
+       .catch((err) => {console.log("Errore: ", err); })};
+</script>

@@ -20,62 +20,88 @@ var dona_sidebar_button = document.getElementById("dona_sidebar");
 var lingua_sidebar_button = document.getElementById("lingua_sidebar");
 var segnala_sidebar_button = document.getElementById("segnala_sidebar");
 
-titoloButton.addEventListener("click", function() {
-    if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/) {
-        fullHome();
-        caricaPaginaHome();
-    }
-});
+if(titoloButton){
+    titoloButton.addEventListener("click", function() {
+        if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/) {
+            fullHome();
+            caricaPaginaHome();
+        }
+    });
+}
 
 //Listener per le pagine menu laterale
-cercaButton.addEventListener("click", function() {
-    fullSearch();
-    caricaPaginaCerca();
-});
-
-cercaButtonTop.addEventListener("click", function() {
-    if(window.innerHeight < window.innerWidth)
-    {
-        fullSearchTop();
+if(cercaButton){
+    cercaButton.addEventListener("click", function() {
+        fullSearch();
         caricaPaginaCerca();
-    }
-});
+    });
+}
 
-info_sidebar_button.addEventListener("click", function() {
-    bothEmpty();
-    if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/)
-        bothEmpty2();
-    navbar_closeSidenav();
-    caricaPaginaInfo();
-});
-homeButton.addEventListener("click", function() {
-    fullHome();
-    caricaPaginaHome();
-});
-esplora_sidebar_button.addEventListener("click", function() {
-    navbar_closeSidenav();
-    fullSearch();
-    caricaPaginaCerca();
-});
-qr_sidebar_button.addEventListener("click", function() {
-    navbar_closeSidenav();
-    bothEmpty();
-    if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/)
-        bothEmpty2();
-    setTimeout(clickQR, 500); //Avvia l'animazione del QR dopo che si è chiusa la sidenav
-});
-dona_sidebar_button.addEventListener("click", function() {
-    navbar_closeSidenav();
-    urlDonazione = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U5V2VVZ47JPTS&source=url";
-    window.location.href = urlDonazione;
-});
-lingua_sidebar_button.addEventListener("click", function() {
-    alert("Mi dispiace, per ora l'app è disponibile solo in italiano. \nWe're sorry, the app is only available in Italian for now.")
-});
-segnala_sidebar_button.addEventListener("click", function() {
-    navbar_closeSidenav();
-    apriFinestraSegnalazioneBug();
-});
+if(cercaButtonTop){
+    cercaButtonTop.addEventListener("click", function() {
+        if(window.innerHeight < window.innerWidth)
+        {
+            fullSearchTop();
+            caricaPaginaCerca();
+        }
+    });
+}
+
+if(info_sidebar_button){
+    info_sidebar_button.addEventListener("click", function() {
+        bothEmpty();
+        if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/)
+            bothEmpty2();
+        navbar_closeSidenav();
+        caricaPaginaInfo();
+    });
+}
+
+if(homeButton){
+    homeButton.addEventListener("click", function() {
+        fullHome();
+        caricaPaginaHome();
+    });
+}
+
+if(esplora_sidebar_button){
+    esplora_sidebar_button.addEventListener("click", function() {
+        navbar_closeSidenav();
+        fullSearch();
+        caricaPaginaCerca();
+    });
+}
+
+if(qr_sidebar_button){
+    qr_sidebar_button.addEventListener("click", function() {
+        navbar_closeSidenav();
+        bothEmpty();
+        if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/)
+            bothEmpty2();
+        setTimeout(clickQR, 500); //Avvia l'animazione del QR dopo che si è chiusa la sidenav
+    });
+}
+
+if(dona_sidebar_button){
+    dona_sidebar_button.addEventListener("click", function() {
+        navbar_closeSidenav();
+        urlDonazione = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U5V2VVZ47JPTS&source=url";
+        window.location.href = urlDonazione;
+    });
+}
+
+if(lingua_sidebar_button){
+    lingua_sidebar_button.addEventListener("click", function() {
+        alert("Mi dispiace, per ora l'app è disponibile solo in italiano. \nWe're sorry, the app is only available in Italian for now.")
+    });
+}
+
+if(segnala_sidebar_button){
+    segnala_sidebar_button.addEventListener("click", function() {
+        navbar_closeSidenav();
+        apriFinestraSegnalazioneBug();
+    });
+}
 
 /*
     Funzioni che fanno scomparire/apparire la barra di navigazione inferiore.
