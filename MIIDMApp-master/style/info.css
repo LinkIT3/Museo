@@ -137,6 +137,10 @@ article#Orari div {grid-area: O;}
     font-size: 2rem;
   }
 
+  article h5 {
+    font-size: 1.2rem;;
+  }
+
   p#didascaliaInfo {
     width: 85%;
     font-size: 1.2rem;
@@ -241,8 +245,8 @@ article#Orari div {grid-area: O;}
   }
 
   div#orario img{
-    width: 6vw;
-    height: 6vw;
+    width: 7.9vw;
+    height: 7.9vw;
     margin-left: 10%;
     margin-top: 7%;
     float: left;
@@ -264,10 +268,10 @@ article#Orari div {grid-area: O;}
     float: right;
   }
 
-  .p1{
+  /*.p1{
     font-size: 20px;
     
-  }
+  }*/
 
   /*formattazione Crediti*/
 
