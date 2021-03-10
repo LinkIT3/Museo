@@ -240,6 +240,35 @@ article#Orari div {grid-area: O;}
     grid-row: 2;
   }
 
+  div#orario img{
+    width: 6vw;
+    height: 6vw;
+    margin-left: 10%;
+    margin-top: 7%;
+    float: left;
+  }
+
+  div#orario1 {
+    margin-left: 30%;
+    background-color: transparent;
+    width: 60%;
+    height: 80%;
+    float: left;
+  }
+
+  div#orario2{
+    margin-left: 50%;
+    background-color: transparent;
+    width: 60%;
+    height: 80%;
+    float: right;
+  }
+
+  .p1{
+    font-size: 20px;
+    
+  }
+
   /*formattazione Crediti*/
 
   article#Crediti {
@@ -252,14 +281,6 @@ article#Orari div {grid-area: O;}
     box-sizing: border-box;
     grid-column: 1 / 3;
     grid-row: 3;
-  }
-
-  div#crediti img{
-    width: 7.9vw;
-    height: 7.9vw;
-    margin-left: 10%;
-    margin-top: 7%;
-    float: left;
   }
 
 }

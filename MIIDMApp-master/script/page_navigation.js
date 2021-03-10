@@ -67,7 +67,6 @@ titoloButton.addEventListener("click", function() {
 cercaButton.addEventListener("click", function() {
     fullSearch();
     caricaPaginaCerca();
-    history.pushState("", document.title, "http://localhost/Cartella%20programmi/Museo/MIIDMApp-master/");
 });
 
 cercaButtonTop.addEventListener("click", function() {
@@ -75,7 +74,6 @@ cercaButtonTop.addEventListener("click", function() {
     {
         fullSearchTop();
         caricaPaginaCerca();
-        history.pushState("", document.title, "http://localhost/Cartella%20programmi/Museo/MIIDMApp-master/");
     }
 });
 
@@ -85,7 +83,6 @@ info_sidebar_button.addEventListener("click", function() {
         bothEmpty2();
     navbar_closeSidenav();
     caricaPaginaInfo();
-    history.pushState("", document.title, "http://localhost/Cartella%20programmi/Museo/MIIDMApp-master/");
 });
 homeButton.addEventListener("click", function() {
     fullHome();
