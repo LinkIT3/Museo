@@ -9,6 +9,7 @@ window.onscroll = controllaTrasparenzaTopNavbar;
 
 //window.onbeforeunload = function() { return "exit"; };
 
+/*
 document.onmouseover = function() {
     //User's mouse is inside the page.
     window.innerDocClick = true;
@@ -33,6 +34,7 @@ window.onhashchange = function() {
         }
     }
 }
+*/
 
 function goBack() {
     window.location.hash = window.location.lasthash[window.location.lasthash.length-1];
