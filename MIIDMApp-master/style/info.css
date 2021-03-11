@@ -172,14 +172,14 @@ article#Orari div {grid-area: O;}
     margin-top: 3vh;
     border-left: 2px solid #f1c40e;
     border-bottom: 2px solid #f1c40e;
-    grid-template-columns: 12px auto;
-    grid-template-rows: auto 12px;
+    /*grid-template-columns: 12px auto;
+    grid-template-rows: auto 12px;*/
     border: 0 !important;
-    box-sizing: border-box;
+    /*box-sizing: border-box;
     background-image: url("../res/background_info_maps.png");
     background-size: cover;
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 1;*/
   }
 
   div#trovandoci {
@@ -189,13 +189,13 @@ article#Orari div {grid-area: O;}
     height: 60%;
   }
   
-  div#trovandoci img{
+  /*div#trovandoci img{
     width: 7.9vw;
     height: 7.9vw;
     margin-left: 22%;
     margin-top: 13.5%;
     float: left;
-  }
+  }*/
 
   /*formattazione Contatti*/
   article#Contatti {
