@@ -146,7 +146,6 @@ function caricaPaginaCerca() {
 
 //Richiesta e inserimento della pagina di info nella home
 function caricaPaginaInfo() {
-    window.onbeforeunload = function() {};
     document.getElementById('qrc').src = "./res/qr-code.svg";
     fetch("info.html")
     .then(
