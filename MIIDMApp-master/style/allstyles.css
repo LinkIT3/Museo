@@ -34,6 +34,16 @@ body * {
     width: 100vw;
 }
 
+#page_render_offline {
+    /*margin-top: 9vh;*/
+    background-image: url("../res/bg_2_1920x1080.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    width: 100vw;
+}
+
 #messaggioUsaTelefono, #messaggioGiraTelefono {
     display: none;
     position: absolute;
@@ -54,6 +64,16 @@ body * {
         background-size: cover;
         background-position: center;
         min-height: 91vh;
+        width: 100vw;
+    }
+
+    #page_render_offline {
+        /*margin-top: 9vh;*/
+        background-image: url("../res/bg_2_1920x1080.png");
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
         width: 100vw;
     }
 

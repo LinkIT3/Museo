@@ -5,7 +5,11 @@ self.addEventListener('install', function(e) {
    caches.open('Offline').then(function(cache) {
      return cache.addAll([
       'favicon.ico',
+      'res/192x192.png',
+      'res/bg_2_1920x1080.png',
       'style/allstyles.css',
+      'style/home.css',
+      'manifest.json',
        paginaOffline
      ]);
    })
@@ -44,7 +48,7 @@ self.addEventListener('push', function(event) {
   const title = 'Appunti';
   const options = {
     body: 'Sei offline!',
-    icon: 'res/logo_iconato.png',
+    icon: 'res/favicon.ico',
     badge: 'res/logo_iconato.png'
   };
 
