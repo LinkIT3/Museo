@@ -7,7 +7,7 @@
 //Nel caso in cui si scorra, rendi la TopBar trasparente
 window.onscroll = controllaTrasparenzaTopNavbar;
 
-window.onbeforeunload = function() { return "exit"; };
+//window.onbeforeunload = function() { return "exit"; };
 
 /*
 document.onmouseover = function() {

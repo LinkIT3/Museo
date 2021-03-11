@@ -69,7 +69,7 @@ article.reperto .infoAutoreReperto {
     grid-area: autore;
 }
 
-article.reperto infoSezioneReperto {
+article.reperto .infoSezioneReperto {
     grid-area: sezione;
 }
 
@@ -110,7 +110,7 @@ article.reperto > button.leggiDiPiu:focus {
 
 article.reperto > button.bottoneCliccato {
     width: 100% !important;
-    border-radius: 0 !important;
+    border-radius: 1rem !important;
 }
 
 @media screen and (orientation: landscape) {
@@ -119,8 +119,12 @@ article.reperto > button.bottoneCliccato {
         background-color: #34495e;
         margin: 0;
         font-family: "Josefin Sans";
+    }
+
+    div#page_render{
         display: grid;
         grid-template-columns: auto auto auto;
+        grid-gap:15px;
     }
 
     p.intestazione {
@@ -131,63 +135,50 @@ article.reperto > button.bottoneCliccato {
         width: 80%;
         margin: 0 auto;
         padding-top: 0.5rem;
+        position: absolute;
+        left: 10%;
     }
 
     article.reperto {
         background-color: #1d2a36;
         color: #f1c40e;
-        width: 30%;
-        margin: 5vw;
+        width: 30vw;
+        height: vh;
+        margin: 0vw;
         box-sizing: border-box;
         padding-bottom: 1rem;
+        margin-left: 3%;
+        margin-right: auto;
+        margin-top: 10%;
+        text-align: center;
     }
+
     article.reperto:last-of-type {
         margin-bottom: 17vh;
     }
 
     article.reperto .informazioniReperto_gridcontainer {
-        display: grid;
-        grid-template-columns: 30% 70%;
-        grid-template-rows: 25% 25% 25% 25%;
-        grid-template-areas:
-            "titolo titolo"
-            "foto   data"
-            "foto   autore"
-            "foto   sezione";
-        grid-gap: 5px;
-        grid-column-gap: 15px;
-        box-sizing: border-box;
-        align-items: center;
-        margin-bottom: 1rem;
-        padding: 1rem;
-    }
-
-    article.reperto .imgReperto_container {
-        grid-area: foto;
-        width: 100%;
-    }
-    article.reperto img {
-        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
     }
 
     article.reperto .titoloReperto {
-        grid-area: titolo;
         font-weight: bold;
         font-size: 1.4rem;
         margin: 0;
         text-align: center;
     }
 
-    article.reperto .infoDataReperto {
-        grid-area: data;
+    article.reperto .imgReperto_container {
+        width: 100%;
+    }
+    article.reperto .imgReperto{
+        width: 13vw;
     }
 
-    article.reperto .infoAutoreReperto {
-        grid-area: autore;
-    }
-
-    article.reperto infoSezioneReperto {
-        grid-area: sezione;
+    article.reperto img {
+        max-width: 100%;
     }
 
     article.reperto .iconaInfoRepertoContainer {
@@ -199,7 +190,6 @@ article.reperto > button.bottoneCliccato {
         display: grid;
         grid-template-columns: 20px auto;
         align-items: center;
-        grid-gap: 5px;
     }
 
     article.reperto div span:last-child {
@@ -227,7 +217,7 @@ article.reperto > button.bottoneCliccato {
 
     article.reperto > button.bottoneCliccato {
         width: 100% !important;
-        border-radius: 0 !important;
+        border-radius: 1rem !important;
     }
 
 }
