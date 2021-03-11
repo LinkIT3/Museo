@@ -161,10 +161,7 @@ function stampaReperto(reperto) {
     //Aggiungi tutto alla pagina
     document.getElementById("page_render").appendChild(rep);
 }
-if(Device_Type() == 'Desktop')
-{
-    //metti la funzione qua
-}
+
 //A partire dalla sezione e dal codice, genera il nome della (prima) foto di un reperto
 function nomeFoto(sezione, cod, nImmagine) {
     var nome = "";
