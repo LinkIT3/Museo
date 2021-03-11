@@ -21,8 +21,7 @@
         <script type = "text/javascript" src = "./script/rileva_invio.js"></script>
         <script type = "text/javascript" src = "./script/html5-qrcode.min.js"></script>
         <script type = "text/javascript" src = "./script/page_navigation.js"></script>
-        <script type = "text/javascript" src = "./script/backButton.js"></script>
-
+        <script type = "text/javascript" src = "./script/carica_mappa.js"></script>
 
         <title>MIIDM App</title>
     </head>
