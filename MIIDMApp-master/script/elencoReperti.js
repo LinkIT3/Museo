@@ -29,6 +29,7 @@ function cercaRepertiPerSezione(sez) {
     costruisciListaReperti("./serverSide/ricercaReperti.php?section=" + sez, ricavaSezione(sez));
 }
 
+
 function costruisciListaReperti(url, key) {
     fetch(url)
         .then(
@@ -40,11 +41,14 @@ function costruisciListaReperti(url, key) {
 
                 response.json()
                 .then(reperti => {
+                    var containerListaReperti = document.createElement("div");
+                    containerListaReperti.id = "lista_reperti";
                     document.getElementById("page_render").innerHTML = "";
                     var intestazione = document.createElement("p");
                     intestazione.innerHTML = "Stai visualizzando i risultati di ricerca per: '<strong>" + key + "</strong>'";
                     intestazione.classList.add("intestazione");
                     document.getElementById("page_render").appendChild(intestazione);
+                    document.getElementById("page_render").appendChild(containerListaReperti);
                     reperti.forEach(stampaReperto);
                     bothEmpty(); //Mette entrambe le icone della bottomBar vuote
                 });
@@ -159,7 +163,7 @@ function stampaReperto(reperto) {
     rep.appendChild(bottone);
 
     //Aggiungi tutto alla pagina
-    document.getElementById("page_render").appendChild(rep);
+    document.getElementById("lista_reperti").appendChild(rep);
 }
 
 //A partire dalla sezione e dal codice, genera il nome della (prima) foto di un reperto

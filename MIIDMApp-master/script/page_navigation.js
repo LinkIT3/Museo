@@ -75,7 +75,7 @@ if(cercaButton){
 
 if(cercaButtonTop){
     cercaButtonTop.addEventListener("click", function() {
-        if(window.innerHeight < window.innerWidth)
+        if(Device_Type() == 'Desktop' /*window.innerHeight < window.innerWidth*/)
         {
             fullSearchTop();
             caricaPaginaCerca();

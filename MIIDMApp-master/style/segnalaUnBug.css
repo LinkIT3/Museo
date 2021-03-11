@@ -24,23 +24,28 @@
 }
 
 #segnalaUnBug_divForm {
-  height: calc(100% - 6vh - 15vh);
+  height: calc(100% - 6vh - 15vh);;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  grid-gap: 25px;
+  align-items: baseline;
+  margin-top: 7vh;
   width: 100%;
-  align-items: center;
-  display: table;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .segnalaUnBug_titoloDivForm {
   font-size: 5vw;
   color: #34495e;
-  margin-left: 10vw;
 }
 
 input[type=text], textarea {
   height: 5vh;
   width: 80vw;
   padding: 2vw 2vw;
-  margin-left: 10vw;
   display: inline-block;
   border: 0.5vw solid #ccc;
   border-radius: 4vw;
@@ -53,7 +58,8 @@ input[type=text]:focus, textarea:focus, button:focus {
 }
 
 #segnalaUnBug_tastoInvia {
-  width: 80vw;
+  width: 50%;
+  margin: 0 auto;
   height: 5vh;
   background-color: #34495e;
   color: #f1c40e;
@@ -61,13 +67,11 @@ input[type=text]:focus, textarea:focus, button:focus {
   border: none;
   border-radius: 4vw;
   cursor: pointer;
-  margin-left: 10vw;
   align-items: center;
   display: flex;
   justify-content: center;
   text-align: center;
   font-size: 3vw;
-  margin-top: 1vh;
 }
 
 textarea {
@@ -103,7 +107,7 @@ input:focus::placeholder, textarea:focus::placeholder {
 @media screen and (orientation: landscape) {
 
   #finestraSegnalazioneBug {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     margin: 0;
     background-color: #f1c40e;
@@ -112,64 +116,58 @@ input:focus::placeholder, textarea:focus::placeholder {
     transition: all 0.7s ease;
     z-index: 200;
   }
+
   
   #segnalaUnBug_divTitolo {
-    /*margin-top: -25vh;*/
     text-align: center;
     height: 8vh;
-    width: 100%;   
-    position:relative;         
-    display: flex;
-    justify-content: center;
-  }
-  
-  #segnalaUnBug_titolo {
-    box-align: center;
-    font-size: 4vw;
-    color: #34495e;
-  }
-  
-  #segnalaUnBug_divForm {
-    height: 100vh;
-    width: 100vw;
-    align-items: center;
-    display: inline-block;
-    margin-top: 7vh;
+    width: 100%;
+    margin-bottom: 3rem;
   }
 
+  #segnalaUnBug_titolo {
+    text-align: center;
+    font-size: 3rem;
+    color: #34495e;
+  }
+
+  #segnalaUnBug_divForm {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "credenziali email"
+                         "invia       invia";
+  }
+  
   #credenziali {
-    position:absolute;
-    right:50%;
-    width:50vw;
-    float:right;
-    margin-right: -1vw;
+    grid-area: credenziali;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   #inviaemail{
-    position:absolute;
-    left:50%;
-    width:50vw;
-    float:left;
-    margin-left: 1vw;
+    grid-area: email;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   
   .segnalaUnBug_titoloDivForm {
-    font-size: 3vw; 
+    font-size: 2rem; 
     color: #34495e;
     align-items: center;
     margin-left: 3vw;
   }
   
   input[type=text], textarea {
-    height: 5vh;
-    width: 45vw;
-    padding: 2vw 2vw;
-    margin-left: 2vw;
-    display: inline-block;
-    border: 0.5vw solid #ccc;
-    border-radius: 4vw;
+    height: calc(4px + 20px + 1.5rem);
+    width: 100%;
+    padding: 10px;
+    display: block;
+    border: 2px solid #ccc;
+    border-radius: 1rem;
     box-sizing: border-box;
-    font-size: 2vw;
+    font-size: 1.5rem;
     margin-top: 2vw;
   }
 
@@ -178,31 +176,23 @@ input:focus::placeholder, textarea:focus::placeholder {
   }
   
   #invia{
-    width: 80vw;
-    height: 5vh;
-    position: relative;
-    margin-top: 12vh;
-    margin-left: -41vw;
+    grid-area: invia;
   }
+
   #testoEmail{
     margin-top: 2vw;
   }
+
   #segnalaUnBug_tastoInvia {
-    width: 80vw;
-    height: 5vh;
+    height: calc(20px + 1.5rem); /*4px = bordi, 20px = padding*/
     background-color: #34495e;
     color: #f1c40e;
-    padding: 2vw 2vw;
+    padding: 10px 0;
     border: none;
-    border-radius: 4vw;
+    border-radius: calc((20px + 1.5rem) / 2);
     cursor: pointer;
-    margin-left: 0vw;
-    align-items: center;
-    display: flex;
-    justify-content: center;
     text-align: center;
-    font-size: 3vw;
-    margin-top: 1vh;
+    font-size: 1.5rem;
   }
   
   textarea {
@@ -234,6 +224,6 @@ input:focus::placeholder, textarea:focus::placeholder {
   
   #segnalaUnBug_iconaFooter {
     width: 4vh;
-  }
+  }*/
 
 }

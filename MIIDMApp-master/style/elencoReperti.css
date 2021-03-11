@@ -121,10 +121,13 @@ article.reperto > button.bottoneCliccato {
         font-family: "Josefin Sans";
     }
 
-    div#page_render{
+    div#lista_reperti{
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-gap:15px;
+        max-width: 1000px;
+        padding: 1rem 2rem 1rem 1rem;
+        margin: 0 auto;
     }
 
     p.intestazione {
@@ -132,24 +135,17 @@ article.reperto > button.bottoneCliccato {
         font-family: "Josefin Sans";
         font-size: 1.5rem;
         text-align: center;
-        width: 80%;
         margin: 0 auto;
         padding-top: 0.5rem;
-        position: absolute;
-        left: 10%;
     }
 
     article.reperto {
         background-color: #1d2a36;
         color: #f1c40e;
-        width: 30vw;
-        height: vh;
         margin: 0vw;
+        width: 100%;
         box-sizing: border-box;
         padding-bottom: 1rem;
-        margin-left: 3%;
-        margin-right: auto;
-        margin-top: 10%;
         text-align: center;
     }
 
