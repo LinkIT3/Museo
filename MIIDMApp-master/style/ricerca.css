@@ -253,8 +253,8 @@ article#S div {grid-area: S;}
 
     article.sezione {
         display: grid;
-        width: 20rem;
-        height: 20rem;
+        width: 20vw;
+        height: 20vw;
         transition: all 0.25s ease;
     }
     article.sezione > div {background-color: #f1c40e;}
