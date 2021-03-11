@@ -12,10 +12,10 @@
   <article class = "informazione" id = "Contatti">
     <h1><strong><center>Contattaci</center></strong></h1>
     <div id = "contattaci">
-      <img src = "res/mail.png" onclick = "window.location = 'mailto:pippopluto@gmail.com'" />
-      <img src = "res/phone.png" onclick = "window.location = 'tel:1234567890'" />
-      <a href = ""> <img src = "res/facebook.png" /> </a>
-      <a href = "https://www.instagram.com/miidm_isis/"> <img src = "res/instagram.png" /> </a>
+      <img src = "res/mail.png" id = "mail" onclick = "window.location = 'mailto:pippopluto@gmail.com'" />
+      <img src = "res/phone.png" id = "phone" onclick = "window.location = 'tel:1234567890'" />
+      <a id = "facebook" href = ""> <img src = "res/facebook.png" /> </a>
+      <a id = "instagram" href = "https://www.instagram.com/miidm_isis/"> <img src = "res/instagram.png" /> </a>
       <img src = "res/share.png" id = "share" onclick="condividi()" />
     </div>
   </article> 
@@ -32,3 +32,19 @@
       <h5>&#149;5^A informatica<br>&#149;Prof. De Bonis Michelangelo<br>&#149;Prof. Tamburrano Pietro<br><br></h5>
   </article>
 </div>
+
+<script>
+  var collegamentoMail = document.getElementById("mail");
+  var collegamentoPhone = document.getElementById("phone");
+  var collegamentoFacebook = document.getElementById("facebook");
+  var collegamentoInstagram = document.getElementById("instagram");
+
+  collegamentoMail.addEventListener("click", function() {
+    rimuoviIndietro();
+    caricaPaginaHome();
+  });
+    
+function rimuoviIndietro() {
+  window.onbeforeunload = function() {};
+  }
+</script>
