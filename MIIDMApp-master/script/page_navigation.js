@@ -7,41 +7,7 @@
 //Nel caso in cui si scorra, rendi la TopBar trasparente
 window.onscroll = controllaTrasparenzaTopNavbar;
 
-//window.onbeforeunload = function() { return "exit"; };
-
-/*
-document.onmouseover = function() {
-    //User's mouse is inside the page.
-    window.innerDocClick = true;
-}
-
-document.onmouseleave = function() {
-    //User's mouse has left the page.
-    window.innerDocClick = false;
-}
-
-window.onhashchange = function() {
-    if (window.innerDocClick) {
-        window.innerDocClick = false;
-    } else {
-        if (window.location.hash != '#undefined') {
-            goBack();
-        } 
-        else {
-            //history.pushState("", document.title, caricaPaginaHome());
-            //location.reload();
-            window.onbeforeunload = function() { return "exit"; };
-        }
-    }
-}
-
-function goBack() {
-    window.location.hash = window.location.lasthash[window.location.lasthash.length-1];
-    var link = $(this).html();
-    $(this).contents().wrap('<a href="http://localhost/Cartella%20programmi/Museo/MIIDMApp-master/"></a>');
-    window.location.lasthash.pop();
-}
-*/
+window.onbeforeunload = function() { return "exit"; };
 
 var bodyPagina = document.getElementById("page_render"); //Non coincide con il body
                                                          //vero e proprio, ma con il pezzo dove andranno renderizzate le altre sezioni
