@@ -51,6 +51,13 @@
 }
 @keyframes width100 {to {width: 100%;}}
 
+@keyframes offline {
+    0% {opacity: 0; transform: scale(0.5); top: 4rem;}
+    30% {opacity: 0; transform: scale(0.5); top: 2rem;}
+    60% {opacity: 1; transform: scale(1); top: 0rem;}
+    80% {top: 0;}
+    100% {top: 0;}
+}
 
 #div_sfondo_home {
     width: 100vw;
@@ -62,7 +69,7 @@
     align-items: center;
 }
 
-#div_sfondo_home > p#iniziale, p#renderizzatoDiNuovo {
+#div_sfondo_home > p#iniziale, #div_sfondo_home > p#iniziale_offline, p#renderizzatoDiNuovo {
     font-family: "Josefin Slab", "serif";
     position: relative;
     text-align: center;
@@ -90,13 +97,25 @@
     display: block;
     box-sizing: border-box;
 }
-#div_sfondo_home > p#iniziale:before {
+#div_sfondo_home > p#iniziale:before, #div_sfondo_home > p#iniziale_offline:before {
     top: 0;
     left: 0;
 }
-#div_sfondo_home > p#iniziale:after {
+#div_sfondo_home > p#iniziale:after, #div_sfondo_home > p#iniziale_offline:after {
     bottom: 0;
     right: 0;
+}
+
+#div_sfondo_home > p#iniziale_offline:before, #div_sfondo_home > p#iniziale_offline:after {
+    width: 0;
+    background: #f1c40e;
+    height: 2px;
+    content: "";
+    animation: width100 1s ease forwards;
+    animation-delay: 0.5s;
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
 }
 
 #div_sfondo_home span {
@@ -104,7 +123,7 @@
     font-family: "Josefin Slab", "serif";
 }
 
-span#title_passato, span#title_futuro, #div_sfondo_home strong {
+span#title_passato, span#title_futuro, #div_sfondo_home strong, span#offline {
     font-weight: 700;
     font-size: 3rem;
     font-family: "Josefin Slab", "serif";
@@ -119,6 +138,8 @@ span#title_le {animation: animazione_le 1s ease forwards; animation-delay: 1.5s;
 span#title_tecnologie {animation: animazione_tecnologie 1s ease forwards; animation-delay: 1.8s; left: 100vw;}
 span#title_del2 {animation: animazione_del2 1s ease forwards; animation-delay: 1.8s; right: 100vw;}
 span#title_futuro {display: block; animation: animazione_futuro 2s ease forwards; animation-delay: 2.3s; opacity: 0}
+
+span#offline {display: block; animation: offline 1.5s ease;}
 
 @media screen and (orientation: landscape) {
     
