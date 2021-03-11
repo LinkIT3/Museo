@@ -68,6 +68,7 @@ function stampaReperto(reperto) {
     var containerImg = document.createElement("div");
     containerImg.classList.add("imgReperto_container");
     var imgReperto = document.createElement("img");
+    imgReperto.classList.add("imgReperto");
     imgReperto.src = ceckImg("res/miniature/min_" + nomeFoto(reperto.sezione, reperto.codrelativo, 0));////////////////////////////////////////////////
     containerImg.appendChild(imgReperto);
 
