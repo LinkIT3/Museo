@@ -7,7 +7,7 @@
 //Nel caso in cui si scorra, rendi la TopBar trasparente
 window.onscroll = controllaTrasparenzaTopNavbar;
 
-window.onbeforeunload = function() { return "exit"; };
+/*window.onbeforeunload = function() { return "exit"; };*/
 
 var bodyPagina = document.getElementById("page_render"); //Non coincide con il body
                                                          //vero e proprio, ma con il pezzo dove andranno renderizzate le altre sezioni
