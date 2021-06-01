@@ -23,7 +23,7 @@
         <script type = "text/javascript" src = "./script/page_navigation.js"></script>
         <script type = "text/javascript" src = "./script/carica_mappa.js"></script>
 
-        <title>MIIDM App</title>
+        <title>Di Maggio Techseum</title>
     </head>
     <body>
         <?php include("navbar.html");?>

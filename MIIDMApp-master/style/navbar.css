@@ -126,7 +126,7 @@ nav#navbar_topNav {
   #navbar_titoloTopNav {
     font-size: 1.7rem;
     margin: 0;
-    padding-left: 23vw;
+    text-align: center;
     color: #34495e;
     letter-spacing: 0.8vw;
   }
@@ -134,12 +134,12 @@ nav#navbar_topNav {
   #navbar_divTitoloTopNav {
     display: flex;
     align-items: center;
-    margin-top: 1vh;
+    margin: 8px auto 1vh auto ;
     cursor: pointer;
   }
 
  #navbar_logoTopNav {
-    width: 9vh;
+    width: 6.5vh;
     cursor: pointer;
     display:none;
   }
@@ -169,8 +169,7 @@ nav#navbar_topNav {
     background-color: #f1c40e;
     transition: all 0.7s ease;
     width: 100vw;
-    height: 60vh;
-    position: fixed;
+    height: auto;
     top: -100vh;
     left: 0vw;
     z-index: 3;
@@ -180,10 +179,8 @@ nav#navbar_topNav {
     display: grid;
     grid-template-columns: 9vw 30vw;
     width: 30vw;
-    height: 8vh;
-    padding-left: 38.5vw;
-    /*align-items: center;*/
-    
+    height: auto;
+    margin: 10px auto;
   }
   
   .navbar_divIconeSelezioniSidenav {
