@@ -5,9 +5,8 @@
   $testoEmail = "Nome: " . $data->nome;
   $testoEmail .= "\nIndirizzo email: " . $data->indirizzoEmail;
   $testoEmail .= "\nCorpo messaggio:\n" . $data->testoEmail;
-  $oggetto = "SEGNALAZIONE BUG MIIDM APP - " . $data->oggettoEmail;
+  $oggetto = "SEGNALAZIONE BUG DI MAGGIO TECH SEUM - " . $data->oggettoEmail;
   if(mail($EMAIL_PER_BUG, $oggetto, $testoEmail))
     echo "Mail inviata correttamente!";
   else
     echo "ERRORE!";
-?>

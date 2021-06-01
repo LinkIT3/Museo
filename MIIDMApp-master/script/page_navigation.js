@@ -210,8 +210,8 @@ function controllaTrasparenzaTopNavbar() {
 function condividi() {
   if (navigator.share != undefined) {
     navigator.share({
-      title: 'MIIDM App',
-      text: 'Vieni a scoprire il MIIDM!',
+      title: 'Di Maggio Tech Seum',
+      text: 'Vieni a scoprire il Di Maggio Tech Seum!',
       url: 'https://databasereperti.altervista.org/',
     })
     .then(() => console.log('Successful share'))
