@@ -7,25 +7,27 @@
       <img id="navbar_logoTopNavSearch" src="./res/search_e2.svg"/>
     </button>
     <script>
-      if(window.innerHeight < window.innerWidth)
-      {
           /*function animOptSF(){ //operazioni dopo 150ms dal click di Cerca
           document.getElementById('homeE').style.top = "calc(45% - 2.25vh)";
           document.getElementById('searchF').style.opacity = "1";
           document.getElementById('searchE').style.opacity = "0";
           }*/
           function fullSearchTop(){
-            document.getElementById ('navbar_logoTopNavSearch').src = "./res/search_f2.svg";
-            setTimeout(animOptSF, 150);
+            if(window.innerHeight < window.innerWidth)
+            {
+              document.getElementById ('navbar_logoTopNavSearch').src = "./res/search_f2.svg";
+              setTimeout(animOptSF, 150);
+            }
           }
+          
           /*Rende entrambe le icone, sia "Home" che "Cerca", deselezionate*/
           function bothEmpty2() {
-          // quando si preme qualsiasi cosa dopo il pulsante Cerca (es. sezione o Search)
-            document.getElementById ('navbar_logoTopNavSearch').src = "./res/search_e2.svg";
+            if(window.innerHeight < window.innerWidth)
+            {
+              // quando si preme qualsiasi cosa dopo il pulsante Cerca (es. sezione o Search)
+              document.getElementById ('navbar_logoTopNavSearch').src = "./res/search_e2.svg";
+            }
           }
-
-      }
-      
     </script>
   </div>
   
