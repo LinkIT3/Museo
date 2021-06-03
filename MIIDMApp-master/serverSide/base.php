@@ -1,8 +1,8 @@
 <?php
-    $EMAIL_PER_BUG = "peppesteduto@gmail.com";
-    $DB_USER = "matteocarriera";
-    $DB_PASSWORD = "rHfKRN2ZawFa";
-    $DB_NAME = "my_matteocarriera";
+    $EMAIL_PER_BUG = "";
+    $DB_USER = "";
+    $DB_PASSWORD = "";
+    $DB_NAME = "";
     $DB_SERVER = "localhost";
 ?>
 
