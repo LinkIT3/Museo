@@ -1,10 +1,10 @@
 @font-face {
-   font-family: 'myFirstFont';
-   src: url('./res/josefinSans/JosefinSans-Regular.ttf') format('truetype');
+  font-family: "myFirstFont";
+  src: url("./res/josefinSans/JosefinSans-Regular.ttf") format("truetype");
 }
 
 * {
-   font-family: "Josefin Sans";
+  font-family: "Josefin Sans";
 }
 
 body {
@@ -23,7 +23,7 @@ nav#navbar_topNav {
   z-index: 4;
   position: fixed;
   top: 0;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 #navbar_divTitoloTopNav {
@@ -33,10 +33,12 @@ nav#navbar_topNav {
 }
 
 #navbar_logoTopNav {
-  width: 9vh;
+  width: 6.5vh;
   cursor: pointer;
   position: absolute;
-  display:block;
+  display: block;
+  -webkit-filter: drop-shadow(0px 0px 0px #000);
+  filter: drop-shadow(0px 0px 1px #000);
 }
 
 #navbar_buttonTopNavSearch {
@@ -60,11 +62,11 @@ nav#navbar_topNav {
 }
 
 #navbar_titoloTopNav {
-  font-size: 1.7rem;
+  font-size: 4vh;
   margin: 0;
-  padding-left: 5vw;
   color: #34495e;
   letter-spacing: 0.8vw;
+  text-align: center;
 }
 
 #navbar_mySidenav {
@@ -109,22 +111,21 @@ nav#navbar_topNav {
 }
 
 #divOscuramento {
-    position: fixed;
-    z-index: -4;
-    opacity: 0;
-    top: 9vh;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background-color: black;
-    transition: all 0.5s ease;
+  position: fixed;
+  z-index: -4;
+  opacity: 0;
+  top: 9vh;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: black;
+  transition: all 0.5s ease;
 }
 
 @media screen and (orientation: landscape) {
-
   #navbar_titoloTopNav {
-    font-size: 1.7rem;
+    font-size: 4vh;
     margin: 0;
     text-align: center;
     color: #34495e;
@@ -134,20 +135,20 @@ nav#navbar_topNav {
   #navbar_divTitoloTopNav {
     display: flex;
     align-items: center;
-    margin: 8px auto 1vh auto ;
+    margin: 8px auto 1vh auto;
     cursor: pointer;
   }
 
- #navbar_logoTopNav {
+  #navbar_logoTopNav {
     width: 6.5vh;
     cursor: pointer;
-    display:none;
+    display: none;
   }
 
   #navbar_buttonTopNavSearch {
     width: 7vw;
     height: 7.25vh;
-    display:block;
+    display: block;
     position: relative;
     margin: 0;
     padding: 0;
@@ -157,11 +158,11 @@ nav#navbar_topNav {
   }
 
   #navbar_buttonTopNavSearch img {
-    display:block;
+    display: block;
     position: absolute;
-    top: calc(35% - 2.30vh);
-    left: calc(50% - 3.50vh);
-    width: 6.80vh;
+    top: calc(35% - 2.3vh);
+    left: calc(50% - 3.5vh);
+    width: 6.8vh;
     transition: 0.6s;
   }
 
@@ -182,7 +183,7 @@ nav#navbar_topNav {
     height: auto;
     margin: 10px auto;
   }
-  
+
   .navbar_divIconeSelezioniSidenav {
     width: 9vw;
     height: 8vh;
@@ -190,27 +191,27 @@ nav#navbar_topNav {
     display: flex;
     justify-content: center;
   }
-  
+
   .navbar_iconeSelezioniSidenav {
     width: 6vh;
     padding-left: 2vw;
     cursor: pointer;
   }
-  
+
   .navbar_divLinkSelezioniSidebar {
     align-items: center;
     display: flex;
     width: 30vw;
     height: 9.25vh;
   }
-  
+
   .navbar_linkSelezioniSidenav {
     font-size: 3vw;
     color: #34495e;
     cursor: pointer;
   }
 
-   /*Viene effettuata la modifica per gli elementi contenuti nel divSelezioniSidenav*/
+  /*Viene effettuata la modifica per gli elementi contenuti nel divSelezioniSidenav*/
   .navbar_divSelezioniSidenav:hover > * {
     transition: transform 0.6s ease;
     transform: scale(1.05);
@@ -218,16 +219,15 @@ nav#navbar_topNav {
   }
 
   #divOscuramento {
-      position: fixed;
-      z-index: -4;
-      opacity: 0;
-      top: 9vh;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      background-color: black;
-      transition: all 0.2s ease;
+    position: fixed;
+    z-index: -4;
+    opacity: 0;
+    top: 9vh;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+    transition: all 0.2s ease;
   }
-
 }

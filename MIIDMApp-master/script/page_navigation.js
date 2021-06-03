@@ -212,7 +212,7 @@ function condividi() {
     navigator.share({
       title: 'Di Maggio Tech Seum',
       text: 'Vieni a scoprire il Di Maggio Tech Seum!',
-      url: 'https://databasereperti.altervista.org/',
+      url: 'www.isdimaggio.it/techseum/',
     })
     .then(() => console.log('Successful share'))
     .catch((error) => console.log('Error sharing', error));
